@@ -18,11 +18,6 @@ cognome_corsista varchar2(30) NOT NULL,
 precedenti_formativi number(1),
 constraint p_corsisti primary key(cod_corsista));
 
-create table corso_corsista(
-cod_corso int,
-cod_corsista int,
-constraint f_ccorso foreign key(cod_corso) references dati_corsi (cod_corso),
-constraint f_ccorsista foreign key(cod_corsista) references dati_corsisti (cod_corsista));
 
 create table dati_corsi(
 cod_corso int,
@@ -35,6 +30,13 @@ aula_corso char(3),
 cod_docente int,
 constraint p_ccorso primary key(cod_corso),
 constraint f_cdocente foreign key(cod_docente) references  dati_docenti (cod_docente)); 
+
+create table corso_corsista(
+cod_corso int,
+cod_corsista int,
+constraint f_ccorso foreign key(cod_corso) references dati_corsi (cod_corso),
+constraint f_ccorsista foreign key(cod_corsista) references dati_corsisti (cod_corsista));
+
 
 create sequence amministratore_sequence;
 create sequence docente_sequence;
