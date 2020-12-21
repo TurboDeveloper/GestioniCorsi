@@ -1,3 +1,13 @@
+drop table amministratore cascade constraints;
+drop table dati_docenti cascade constraints;
+drop table dati_corsisti cascade constraints;
+drop table dati_corsi cascade constraints;
+drop table corso_corsista cascade constraints;
+drop sequence amministratore_sequence;
+drop sequence docente_sequence;
+drop sequence corsista_sequence;
+drop sequence corsi_sequence;
+
 create table amministratore(
 cod_admin int,
 nome_admin varchar2(30) NOT NULL,
@@ -15,7 +25,7 @@ create table dati_corsisti(
 cod_corsista int,
 nome_corsista varchar2(30) NOT NULL,
 cognome_corsista varchar2(30) NOT NULL,
-precedenti_formativi number(1),
+precedenti_formativi number(1)  DEFAULT '0',
 constraint p_corsisti primary key(cod_corsista));
 
 
