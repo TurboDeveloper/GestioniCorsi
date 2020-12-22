@@ -19,6 +19,8 @@ public interface DAOConstants {
 	String UPDATE_AMMINISTRATORE="Update amministratore set nome_admin=? cognome_admin=? password_admin where cod_amin=? ";
 	String DELETE_AMMINISTRATORE="Delete from amministratore where cod_admin=?";
 	String SELECT_AMMINISTRATORE_BYID="Select * from amministratore where cod_admin=?";
+	
+	String SELECT_CORSISTASEQ = "Select corsista_sequence.nextval from dual";
 }
 
 

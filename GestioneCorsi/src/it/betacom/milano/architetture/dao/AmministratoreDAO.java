@@ -13,10 +13,7 @@ import adapter.AdapterAmministratore;
 import it.betacom.milano.businesscomponent.model.Amministratore;
 
 public class AmministratoreDAO extends AdapterAmministratore implements DAOConstants {
-	
-
-	private CachedRowSet rowSet;
-	
+	private CachedRowSet rowSet;	
 	
 	public static AmministratoreDAO createAmministratoreDAO(CachedRowSet rowSet) throws SQLException {
 		return new AmministratoreDAO(rowSet);
@@ -28,7 +25,7 @@ public class AmministratoreDAO extends AdapterAmministratore implements DAOConst
 
 	
 	@Override
-	public void create(Connection conn, Amministratore entity) {
+	public void create(Connection conn, Amministratore entity) throws DAOException {
 		rowSet.setCommand(SELECT_AMMINISTRATORE);
 		rowSet.execute(conn);
 		rowSet.moveToInsertRow();
@@ -43,7 +40,7 @@ public class AmministratoreDAO extends AdapterAmministratore implements DAOConst
 	}
 
 	@Override
-	public void update(Connection conn, Amministratore entity) {
+	public void update(Connection conn, Amministratore entity) throws SQLException {
 		PreparedStatement ps = conn.prepareStatement(UPDATE_AMMINISTRATORE);
 		ps.setString(1, entity.getNome_admin());
 		ps.setString(2, entity.getCognome_admin());
@@ -55,7 +52,7 @@ public class AmministratoreDAO extends AdapterAmministratore implements DAOConst
 	}
 
 	@Override
-	public void delete(Connection conn, long id) {
+	public void delete(Connection conn, long id) throws SQLException {
 		PreparedStatement ps = conn.prepareStatement(DELETE_AMMINISTRATORE);
 		ps.setLong(1, id);
 		ps.execute();
@@ -64,8 +61,7 @@ public class AmministratoreDAO extends AdapterAmministratore implements DAOConst
 
 	@Override
 	public Amministratore getById(Connection conn, long id) {
-		Amministratore a = new Amministratore();
-		
+		Amministratore a = new Amministratore();	
 		PreparedStatement ps = conn.prepareStatement(SELECT_AMMINISTRATORE_BYID);
 		ps.setLong(1, id);
 		ResultSet rs = ps.executeQuery();
