@@ -16,11 +16,11 @@ public class DocenteDAO extends AdapterDocente implements GenericDAO<Docente>, D
 
 	private CachedRowSet rowSet;
 
-	public static DocenteDAO getFactory() throws SQLException {
+	public static DocenteDAO getFactory() throws DAOException {
 		return new DocenteDAO();
 	}
 
-	private DocenteDAO() throws SQLException {
+	private DocenteDAO() throws DAOException {
 
 		try {
 			rowSet=RowSetProvider.newFactory().createCachedRowSet();
