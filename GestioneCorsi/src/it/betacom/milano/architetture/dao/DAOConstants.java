@@ -15,6 +15,10 @@ public interface DAOConstants {
 	String SELECT_CORSIDISPONIBILI="Select * from dati_corsi where posti_disponibili>0 oder by posti_disponibili"; //(posti_totali-prenotati)as posti_disponibili>0
 	String DELETE_CORSI="Delete from dati_corsi where cod_corso=?";
 	String DELETE_CORSO_CORSISTA="Delete from corso_corsista where cod_corso=?";
+	String SELECT_AMMINISTRATORE="Select * from amministratore";
+	String UPDATE_AMMINISTRATORE="Update amministratore set nome_admin=? cognome_admin=? password_admin where cod_amin=? ";
+	String DELETE_AMMINISTRATORE="Delete from amministratore where cod_admin=?";
+	String SELECT_AMMINISTRATORE_BYID="Select * from amministratore where cod_admin=?";
 }
 
 

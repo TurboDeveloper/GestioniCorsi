@@ -56,7 +56,7 @@ public class AmministratoreDAO extends AdapterAmministratore implements DAOConst
 
 	@Override
 	public void delete(Connection conn, long id) {
-		PreparedStatement ps = conn.prepareStatement(DELETE_AMINISTRATORE);
+		PreparedStatement ps = conn.prepareStatement(DELETE_AMMINISTRATORE);
 		ps.setLong(1, id);
 		ps.execute();
 		conn.commit();
