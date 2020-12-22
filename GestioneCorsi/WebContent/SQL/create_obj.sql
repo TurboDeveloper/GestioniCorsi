@@ -12,7 +12,7 @@ create table amministratore(
 cod_admin int,
 nome_admin varchar2(30) NOT NULL,
 cognome_admin varchar2(30) NOT NULL,
-pasword_admin varchar2(30) NOT NULL,
+password_admin varchar2(30) NOT NULL,
 constraint p_adm primary key(cod_admin));
 
 create table dati_docenti(
