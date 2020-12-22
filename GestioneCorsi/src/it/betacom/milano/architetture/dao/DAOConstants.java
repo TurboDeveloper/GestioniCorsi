@@ -5,8 +5,24 @@ public interface DAOConstants {
 	String DOCENTE_SEQUENCE="select docente_sequence.nextval from dual";
 	String CORSISTA_SEQUENCE="select corsista_sequence.nextval from dual";
 	String CORSI_SEQUENCE="select corsi_sequence.nextval from dual";
-	
-
+	String INSERT_CORSISTA="insert into dati_corsisti values(?,?,?,?)";
+	String SELECT_CORSI="Select * from dati_corsi ";
+	String SELECT_COUNTCOMMENTI="Select count(commenti_corso) from dati_corsi";
+/*???*/	String SELECT_CORSOXNMAGGCORSISTI="select cod_corso, count(cod_corsista) from corso_corsista group by cod_corso fetch 1 rows";
+	String SELECT_DATAINIZIOULTIMOCORSO=" Select nome_corso,data_iniziocorso from dati_corsi where data_iniziocorso=(select MAX(data_iniziocorso) from dati_corsi)";
+	String SELECT_AVGDURATACORSI="select nome_corso, avg(data_finecorso - data_iniziocorso) from dati_corsi group by nome_corso not in ( 'SAT', 'SUN' )";
+	String SELECT_CORSISTI="Select * from dati_corsisti ";
+	String SELECT_CORSIDISPONIBILI="Select * from dati_corsi where posti_disponibili>0 oder by posti_disponibili"; //(posti_totali-prenotati)as posti_disponibili>0
+	String DELETE_CORSI="Delete from dati_corsi where cod_corso=?";
+	String DELETE_CORSO_CORSISTA="Delete from corso_corsista where cod_corso=?";
 }
 
 
+/*SELECT DISTINCT CognomeStudente, NomeStudente, Classe
+FROM (Studente INNER JOIN Voti ON Studente.CodiceStudente=Voti.CodiceStudente) INNER JOIN Materia ON Materia.CodiceMateria=Voti.CodiceMateria
+WHERE Voto < 5 AND Materia = [quale materia?];*/
+
+/*select nome_corso, avg(data_finecorso - data_iniziocorso)
+from dati_corsi
+group by nome_corso*/
+/*select cod_corso, count(cod_corsista) from corso_corsista group by cod_corso*/
