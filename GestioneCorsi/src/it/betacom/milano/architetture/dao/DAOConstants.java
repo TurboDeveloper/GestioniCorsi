@@ -22,7 +22,7 @@ public interface DAOConstants {
 	String SELECT_CORSISTA_BYPK="select * from dati_corsisti where cod_corsista=?";
 	String SELECT_CORSISTI="Select * from dati_corsisti ";
 	String SELECT_CORSIDISPONIBILI="Select * from dati_corsi where posti_disponibili>0 oder by posti_disponibili"; //(posti_totali-prenotati)as posti_disponibili>0
-	String DELETE_CORSI="Delete from dati_corsi where cod_corso=?";
+	String DELETE_CORSO="Delete from dati_corsi where cod_corso=?";
 	String DELETE_CORSO_CORSISTA="Delete from corso_corsista where cod_corso=?";
 	String SELECT_AMMINISTRATORE="Select * from amministratore";
 	String UPDATE_AMMINISTRATORE="Update amministratore set nome_admin=? cognome_admin=? password_admin where cod_amin=? ";
@@ -32,6 +32,11 @@ public interface DAOConstants {
 String SELECT_DOCENTE="Select * from dati_docenti";
 String SELECT_DOCENTE_BYID="Select * from dati_docenti where cod_docente=?";
 //String SELECT_DOCENTEFORCORSO="Select * from dati_docenti inner join dati_corsi on dati_docenti.cod_docente=dati_corsi.cod_docente";
+
+
+String SELECT_CORSISTASEQ = "Select corsista_sequence.nextval from dual";
+String SELECT_CORSI_ATTIVI="Select * from dati_corsi where (data_iniziocorso - ?) > 0 ";
+
 }
 
 

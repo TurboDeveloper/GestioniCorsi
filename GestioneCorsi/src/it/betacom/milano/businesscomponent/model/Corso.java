@@ -10,10 +10,8 @@ public class Corso {
 	private Date data_finecorso;
 	private int costo_corso;
 	private String commenti_corso;
-	private char aula_corso;
-	private int cod_docente;
-	
-	
+	private String aula_corso;
+	private long cod_docente;
 	
 	public Corso() {}
 	
@@ -53,16 +51,16 @@ public class Corso {
 	public void setCommenti_corso(String commenti_corso) {
 		this.commenti_corso = commenti_corso;
 	}
-	public char getAula_corso() {
+	public String getAula_corso() {
 		return aula_corso;
 	}
-	public void setAula_corso(char aula_corso) {
+	public void setAula_corso(String aula_corso) {
 		this.aula_corso = aula_corso;
 	}
-	public int getCod_docente() {
+	public long getCod_docente() {
 		return cod_docente;
 	}
-	public void setCod_docente(int cod_docente) {
+	public void setCod_docente(long cod_docente) {
 		this.cod_docente = cod_docente;
 	}
 	@Override
