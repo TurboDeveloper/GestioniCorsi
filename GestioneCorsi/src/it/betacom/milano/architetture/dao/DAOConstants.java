@@ -28,6 +28,10 @@ public interface DAOConstants {
 	String UPDATE_AMMINISTRATORE="Update amministratore set nome_admin=? cognome_admin=? password_admin where cod_amin=? ";
 	String DELETE_AMMINISTRATORE="Delete from amministratore where cod_admin=?";
 	String SELECT_AMMINISTRATORE_BYID="Select * from amministratore where cod_admin=?";
+	/*---------DOCENTE----------*/
+String SELECT_DOCENTE="Select * from dati_docenti";
+String SELECT_DOCENTE_BYID="Select * from dati_docenti where cod_docente=?";
+//String SELECT_DOCENTEFORCORSO="Select * from dati_docenti inner join dati_corsi on dati_docenti.cod_docente=dati_corsi.cod_docente";
 }
 
 
