@@ -1,7 +1,7 @@
 package it.betacom.milano.businesscomponent.model;
 
 public class Docente {
-	private int cod_docente;
+	private long cod_docente;
 	private String nome_docente;
 	private String cognome_docente;
 	private String cv_docente;
@@ -11,10 +11,10 @@ public class Docente {
 	
 	public Docente() {}
 	
-	public int getCod_docente() {
+	public long getCod_docente() {
 		return cod_docente;
 	}
-	public void setCod_docente(int cod_docente) {
+	public void setCod_docente(long cod_docente) {
 		this.cod_docente = cod_docente;
 	}
 	public String getNome_docente() {

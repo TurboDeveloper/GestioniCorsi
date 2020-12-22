@@ -1,7 +1,7 @@
 package it.betacom.milano.businesscomponent.model;
 
 public class Corsista {
-	private int cod_corsista;
+	private long cod_corsista;
 	private String nome_corsista;
 	private String cognome_corsista;
 	private boolean precententi_formativi;
@@ -11,10 +11,10 @@ public class Corsista {
 	public Corsista() {}
 	
 	
-	public int getCod_corsista() {
+	public long getCod_corsista() {
 		return cod_corsista;
 	}
-	public void setCod_corsista(int cod_corsista) {
+	public void setCod_corsista(long cod_corsista) {
 		this.cod_corsista = cod_corsista;
 	}
 	public String getNome_corsista() {

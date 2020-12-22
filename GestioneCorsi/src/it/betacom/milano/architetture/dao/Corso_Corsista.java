@@ -1,8 +1,25 @@
 package it.betacom.milano.architetture.dao;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
-public class Corso_Corsista implements GenericDAO<Corso_Corsista> {
+import javax.sql.rowset.CachedRowSet;
+import javax.sql.rowset.RowSetProvider;
+
+public class Corso_Corsista implements GenericDAO<Corso_Corsista>,DAOConstants {
+	
+
+	private CachedRowSet rowSet;
+	
+	public static Corso_Corsista createCorso_Corsista(CachedRowSet rowSet) throws SQLException {
+		return new Corso_Corsista(rowSet);
+	}
+	
+
+	private Corso_Corsista(CachedRowSet rowSet) throws SQLException {
+		
+		this.rowSet = RowSetProvider.newFactory().createCachedRowSet();
+	}
 
 	@Override
 	public void create(Connection conn, Corso_Corsista entity) {

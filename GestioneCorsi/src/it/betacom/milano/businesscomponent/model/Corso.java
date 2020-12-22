@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Corso {
 	
-	private int cod_corso;
+	private long cod_corso;
 	private String nome_corso;
 	private Date data_iniziocorso;
 	private Date data_finecorso;
@@ -17,10 +17,10 @@ public class Corso {
 	
 	public Corso() {}
 	
-	public int getCod_corso() {
+	public long getCod_corso() {
 		return cod_corso;
 	}
-	public void setCod_corso(int cod_corso) {
+	public void setCod_corso(long cod_corso) {
 		this.cod_corso = cod_corso;
 	}
 	public String getNome_corso() {
