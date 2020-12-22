@@ -1,6 +1,7 @@
 package it.betacom.milano.architetture.dao;
 
 public interface DAOConstants {
+
 	String AMMINISTRATORE_SEQUENCE="select amministratore_sequence.nextval from dual";
 	String DOCENTE_SEQUENCE="select docente_sequence.nextval from dual";
 	String CORSISTA_SEQUENCE="select corsista_sequence.nextval from dual";
@@ -17,6 +18,8 @@ public interface DAOConstants {
 			+ "  (CASE WHEN TO_CHAR(CompleteDate,'DY','nls_date_language=english')='SAT' THEN 1 ELSE 0 END) as BusinessDays\r\n"
 			+ "FROM Orders\r\n"
 			+ "ORDER BY OrderNumber;";
+	String UPDATE_CORSISTA="update dati_corsisti set nome_corsista=?,cognome_corsista=?,precedenti_formativi=?,where cod_corsista=?";
+	String SELECT_CORSISTA_BYPK="select * from dati_corsisti where cod_corsista=?";
 	String SELECT_CORSISTI="Select * from dati_corsisti ";
 	String SELECT_CORSIDISPONIBILI="Select * from dati_corsi where posti_disponibili>0 oder by posti_disponibili"; //(posti_totali-prenotati)as posti_disponibili>0
 	String DELETE_CORSI="Delete from dati_corsi where cod_corso=?";
@@ -26,6 +29,7 @@ public interface DAOConstants {
 	String DELETE_AMMINISTRATORE="Delete from amministratore where cod_admin=?";
 	String SELECT_AMMINISTRATORE_BYID="Select * from amministratore where cod_admin=?";
 }
+
 
 
 /*SELECT DISTINCT CognomeStudente, NomeStudente, Classe

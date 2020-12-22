@@ -32,6 +32,7 @@ public class Corsista {
 	public boolean isPrecententi_formativi() {
 		return precententi_formativi;
 	}
+	
 	public void setPrecententi_formativi(long numero) {
 		if(numero==1) {
 			this.precententi_formativi = true;

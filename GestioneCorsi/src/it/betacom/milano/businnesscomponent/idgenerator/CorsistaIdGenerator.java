@@ -31,7 +31,7 @@ public class CorsistaIdGenerator implements IdGeneratorInterface, DAOConstants{
 		long id = 0;
 		try {
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(SELECT_CORSISTASEQ);
+			rs = stmt.executeQuery(CORSISTA_SEQUENCE);
 			rs.next();
 			id = rs.getLong(1);
 		}catch (SQLException e) {
