@@ -20,8 +20,8 @@ public class DBAccess {
 		
 			conn = DriverManager.getConnection(
 					p.getProperty("jdbcUrl"), 
-					p.getProperty("JdbcUsername"),
-					p.getProperty("JdbcPassword"));
+					p.getProperty("jdbcUsername"),
+					p.getProperty("jdbcPassword"));
 			conn.setAutoCommit(false);
 		}catch(NullPointerException exc) {
 			System.out.println("sono qui");

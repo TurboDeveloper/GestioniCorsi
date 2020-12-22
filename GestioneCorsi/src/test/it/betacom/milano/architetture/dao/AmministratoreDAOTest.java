@@ -34,9 +34,7 @@ class AmministratoreDAOTest {
 		AmministratoreDAO.getFactory().delete(conn, a.getCod_admin());
 		a=null;
 		System.out.println("delete fatto");
-	}
-
-	
+	}	
 
 	@Test
 	void testCreate() {

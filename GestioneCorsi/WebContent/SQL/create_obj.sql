@@ -53,3 +53,4 @@ create sequence amministratore_sequence;
 create sequence docente_sequence;
 create sequence corsista_sequence;
 create sequence corsi_sequence;
+
