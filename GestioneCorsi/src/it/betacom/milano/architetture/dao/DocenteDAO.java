@@ -54,6 +54,7 @@ public class DocenteDAO extends AdapterDocente implements GenericDAO<Docente>, D
 			PreparedStatement ps = conn.prepareStatement(SELECT_DOCENTE_BYID);
 			ps.setLong(1, id);
 			ResultSet rs = ps.executeQuery();
+			d=new Docente();
 			if (rs.next()) {
 				d.setCod_docente(rs.getLong(1));
 				d.setNome_docente(rs.getString(2));
