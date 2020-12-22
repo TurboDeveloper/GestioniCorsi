@@ -41,6 +41,10 @@ public class AmministratoreDAO extends AdapterAmministratore implements DAOConst
 		rowSet.insertRow();
 		rowSet.moveToCurrentRow();
 		rowSet.acceptChanges();
+		}catch(NullPointerException exc) {
+			System.out.println(exc.getMessage());
+			System.out.println(entity.toString());
+		
 		}catch(SQLException sql){
 			throw new DAOException(sql);			
 		}

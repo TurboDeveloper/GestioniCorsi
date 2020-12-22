@@ -11,17 +11,21 @@ public class DBAccess {
 	static private Connection conn;
 
 	public static synchronized Connection getConnection() throws IOException, DAOException, ClassNotFoundException {
+		try {
 		ClassLoader cl = Thread.currentThread().getContextClassLoader();
 		InputStream input = cl.getResourceAsStream("properties/config.properties");
 		Properties p = new Properties();
 		p.load(input);
-		Class.forName(p.getProperty("JdbcDriver"));
-		try {
+		Class.forName(p.getProperty("jdbcDriver"));
+		
 			conn = DriverManager.getConnection(
 					p.getProperty("jdbcUrl"), 
 					p.getProperty("JdbcUsername"),
 					p.getProperty("JdbcPassword"));
 			conn.setAutoCommit(false);
+		}catch(NullPointerException exc) {
+			System.out.println("sono qui");
+			System.out.println(exc.getMessage());			
 		} catch (SQLException e) {
 			throw new DAOException(e);
 		}

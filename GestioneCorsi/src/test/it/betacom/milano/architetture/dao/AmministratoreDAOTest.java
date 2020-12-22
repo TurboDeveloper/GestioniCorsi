@@ -8,7 +8,10 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+
+
 import it.betacom.milano.architetture.dao.AmministratoreDAO;
+import it.betacom.milano.architetture.dao.DAOException;
 import it.betacom.milano.architetture.dao.DBAccess;
 import it.betacom.milano.businesscomponent.model.Amministratore;
 
@@ -20,6 +23,7 @@ class AmministratoreDAOTest {
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		conn=DBAccess.getConnection();
+		a.setCod_admin(3);
 		a.setNome_admin("nome");
 		a.setCognome_admin("cognome");
 		a.setPassword_admin("pass");
@@ -35,8 +39,14 @@ class AmministratoreDAOTest {
 	
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testCreate() {
+		try {
+			AmministratoreDAO.getFactory().create(conn, a);
+			System.out.println("admin creato");
+		}catch(DAOException exc) {
+			exc.printStackTrace();
+			fail("creazione articolo fallita");
+		}
 	}
 
 }
