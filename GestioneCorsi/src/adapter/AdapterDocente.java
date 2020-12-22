@@ -33,7 +33,7 @@ public abstract class AdapterDocente implements GenericDAO<Docente> {
 	}
 
 	@Override
-	public Docente[] getAll(Connection conn) {
+	public Docente[] getAll(Connection conn) throws DAOException {
 		
 		return null;
 	}
