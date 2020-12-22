@@ -17,11 +17,11 @@ public class CorsistaDAO implements GenericDAO<Corsista>,DAOConstants {
 	private CachedRowSet rowSet;
 	
 	
-	public static CorsistaDAO createCorsistaDAO(CachedRowSet rowSet) throws DAOException {
-		return new CorsistaDAO(rowSet);
+	public static CorsistaDAO getFactory() throws DAOException {
+		return new CorsistaDAO();
 	}
 
-	private CorsistaDAO(CachedRowSet rowSet) throws DAOException {
+	private CorsistaDAO() throws DAOException {
 		try {
 			this.rowSet = RowSetProvider.newFactory().createCachedRowSet();
 		}catch(SQLException sql){

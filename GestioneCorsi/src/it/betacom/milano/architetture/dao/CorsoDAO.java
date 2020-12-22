@@ -14,13 +14,13 @@ public class CorsoDAO implements GenericDAO<Corso>,DAOConstants {
 	private CachedRowSet rowSet;
 	
 	
-	public static CorsoDAO createCorsoDAO(CachedRowSet rowSet) throws SQLException {
-		return new CorsoDAO(rowSet);
+	public static CorsoDAO getFactory() throws SQLException {
+		return new CorsoDAO();
 	}
 	
 	
 
-	private CorsoDAO(CachedRowSet rowSet) throws SQLException {
+	private CorsoDAO() throws SQLException {
 		
 		this.rowSet = RowSetProvider.newFactory().createCachedRowSet();
 	}

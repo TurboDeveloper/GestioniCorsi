@@ -14,11 +14,11 @@ public class DocenteDAO implements GenericDAO<Docente>,DAOConstants {
 	private CachedRowSet rowSet;
 	
 	
-	public static DocenteDAO createDocenteDAO(CachedRowSet rowSet) throws SQLException {
-		return new DocenteDAO(rowSet);
+	public static DocenteDAO geFactory() throws SQLException {
+		return new DocenteDAO();
 	}
 
-	private DocenteDAO(CachedRowSet rowSet) throws SQLException {
+	private DocenteDAO() throws SQLException {
 		
 		this.rowSet = RowSetProvider.newFactory().createCachedRowSet();
 	}

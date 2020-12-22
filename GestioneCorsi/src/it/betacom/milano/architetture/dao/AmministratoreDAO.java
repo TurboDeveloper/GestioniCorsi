@@ -14,11 +14,11 @@ import it.betacom.milano.businesscomponent.model.Amministratore;
 public class AmministratoreDAO extends AdapterAmministratore implements DAOConstants {
 	private CachedRowSet rowSet;	
 	
-	public static AmministratoreDAO createAmministratoreDAO(CachedRowSet rowSet) throws DAOException {
-		return new AmministratoreDAO(rowSet);
+	public static AmministratoreDAO getFactory() throws DAOException {
+		return new AmministratoreDAO();
 	}
 
-	private AmministratoreDAO(CachedRowSet rowSet) throws DAOException {	
+	private AmministratoreDAO() throws DAOException {	
 		try {
 			this.rowSet = RowSetProvider.newFactory().createCachedRowSet();
 		}catch(SQLException sql){

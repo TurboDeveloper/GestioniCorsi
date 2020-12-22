@@ -11,12 +11,12 @@ public class Corso_Corsista implements GenericDAO<Corso_Corsista>,DAOConstants {
 
 	private CachedRowSet rowSet;
 	
-	public static Corso_Corsista createCorso_Corsista(CachedRowSet rowSet) throws SQLException {
-		return new Corso_Corsista(rowSet);
+	public static Corso_Corsista getFactory() throws SQLException {
+		return new Corso_Corsista();
 	}
 	
 
-	private Corso_Corsista(CachedRowSet rowSet) throws SQLException {
+	private Corso_Corsista() throws SQLException {
 		
 		this.rowSet = RowSetProvider.newFactory().createCachedRowSet();
 	}
