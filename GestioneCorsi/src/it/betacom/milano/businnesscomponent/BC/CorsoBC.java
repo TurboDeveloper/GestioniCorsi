@@ -4,9 +4,12 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import it.betacom.milano.architetture.dao.CorsistaDAO;
+import it.betacom.milano.architetture.dao.CorsoCorsistaDAO;
 import it.betacom.milano.architetture.dao.CorsoDAO;
 import it.betacom.milano.architetture.dao.DAOException;
 import it.betacom.milano.architetture.dao.DBAccess;
+import it.betacom.milano.businesscomponent.model.Corsista;
 import it.betacom.milano.businesscomponent.model.Corso;
 
 public class CorsoBC {
@@ -55,6 +58,21 @@ public class CorsoBC {
 		}catch (SQLException e) {
 			throw new DAOException(e);
 		}
+	}
+	
+	public Corsista[] getCorsistiIscrittiAlCorso(long cod_corso) throws DAOException {
+		long[] cod_iscritti = null;
+		Corsista[] corsisti_iscritti = null;
+		try {
+			cod_iscritti = CorsoCorsistaDAO.getFactory().getCodIscrittiPerCorso(conn, cod_corso);
+			corsisti_iscritti = new Corsista[cod_iscritti.length];
+			for(int i = 0; i < cod_iscritti.length; i++) {
+				corsisti_iscritti[i] = CorsistaDAO.getFactory().getById(conn, cod_iscritti[i]);
+			}
+		}catch (SQLException e) {
+			throw new DAOException(e);
+		}
+		return corsisti_iscritti;
 	}
 }
 

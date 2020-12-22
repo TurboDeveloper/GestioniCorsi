@@ -75,15 +75,17 @@ public class CorsoDAO implements GenericDAO<Corso>, DAOConstants{
 				ps = conn.prepareStatement(SELECT_CORSO_BY_COD);
 				ps.setLong(1, id);
 				ResultSet rs = ps.executeQuery();
-				c = new Corso();
-				c.setCod_corso(rs.getLong(1));
-				c.setNome_corso(rs.getString(2));
-				c.setData_iniziocorso(new java.util.Date(rs.getDate(3).getTime()));
-				c.setData_finecorso(new java.util.Date(rs.getDate(4).getTime()));
-				c.setCosto_corso(rs.getInt(5));
-				c.setCommenti_corso(rs.getString(6));
-				c.setAula_corso(rs.getString(7));
-				c.setCod_docente(rs.getLong(8));
+				if(rs.next()) {
+					c = new Corso();
+					c.setCod_corso(rs.getLong(1));
+					c.setNome_corso(rs.getString(2));
+					c.setData_iniziocorso(new java.util.Date(rs.getDate(3).getTime()));
+					c.setData_finecorso(new java.util.Date(rs.getDate(4).getTime()));
+					c.setCosto_corso(rs.getInt(5));
+					c.setCommenti_corso(rs.getString(6));
+					c.setAula_corso(rs.getString(7));
+					c.setCod_docente(rs.getLong(8));
+				}
 			}catch (SQLException e) {
 				throw new DAOException(e);
 			}

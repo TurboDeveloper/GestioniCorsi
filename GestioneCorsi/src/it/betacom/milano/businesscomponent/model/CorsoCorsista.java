@@ -1,12 +1,12 @@
 package it.betacom.milano.businesscomponent.model;
 
-public class Corso_Corsista {
+public class CorsoCorsista {
 	private long codice_corso;
 	private long codice_corsista;
 	
 	
 	
-	public Corso_Corsista() {}
+	public CorsoCorsista() {}
 	
 	public long getCodice_corso() {
 		return codice_corso;

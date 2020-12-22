@@ -37,7 +37,8 @@ String SELECT_DOCENTE_BYID="Select * from dati_docenti where cod_docente=?";
 String SELECT_CORSISTASEQ = "Select corsista_sequence.nextval from dual";
 String SELECT_CORSI_ATTIVI= "Select * from dati_corsi where (data_iniziocorso - ?) > 0 ";
 String SELECT_CORSO_BY_COD = "Select * from dati_corsi where cod_corso = ?";
-
+String SELECT_CODISCRITTI_PERCORSO = "Select cod_corsista from corso_corsista where cod_corso = ?";
+String SELECT_CORSO_CORSISTA = "Select * from corso_corsista";
 }
 
 
