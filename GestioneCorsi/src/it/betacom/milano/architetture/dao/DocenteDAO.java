@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
-import adapter.AdapterAmministratore;
 import adapter.AdapterDocente;
 import it.betacom.milano.businesscomponent.model.Docente;
 
