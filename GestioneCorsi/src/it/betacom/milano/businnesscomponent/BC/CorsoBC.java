@@ -27,7 +27,7 @@ public class CorsoBC {
 			throw new DAOException(e);
 		}
 	}
-/*	
+	
 	public void update(Corso c) throws DAOException {
 		try {
 			CorsoDAO.getFactory().update(conn, c);
@@ -35,7 +35,7 @@ public class CorsoBC {
 			throw new DAOException(e);
 		}
 	}
-*/
+
 	public Corso getById(long id) throws DAOException {
 		try {
 			return CorsoDAO.getFactory().getById(conn, id);
