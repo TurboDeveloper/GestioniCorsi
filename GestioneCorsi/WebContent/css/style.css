@@ -1,0 +1,91 @@
+html{
+		position: relative;
+		min-height: 100%;
+}
+
+body{
+	margin-top: 50px;
+	margin-bottom: 330px;
+	background-color: #F9F9F9;
+}
+
+.navbar-inverse {
+	background-color: #303030;
+}
+
+.form-group{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.glyphicon {
+	margin-right: 5px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 300px;
+	background-color: #303030;
+	color: white;
+}
+
+@media screen and (max-width: 590px) {
+	footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 480px;
+		background-color: #303030;
+		color: white;
+	}
+	body {
+	margin-bottom: 500px;
+	background-color: #F9F9F9;
+	}
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+footer nav{
+	float:left;
+	padding: 30px;
+	color: #F9F9F9;
+}
+
+footer section{
+	float:left;
+	padding: 30px;
+}
+
+footer a:link {
+  color: #ff8a00;
+}
+
+footer a:visited {
+  color: #ff8a00;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer a:active {
+  color: red;
+}
+
+p.copyright{
+	clear: both;
+	margin-bottom: 30px;
+	margin-left: 30px;
+}
+
+.prodotti  {
+  width: 200px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+

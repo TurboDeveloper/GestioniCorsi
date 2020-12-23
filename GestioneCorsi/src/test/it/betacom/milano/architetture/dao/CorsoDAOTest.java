@@ -52,7 +52,9 @@ class CorsoDAOTest {
 			CorsoDAO.getFactory().create(conn, corso);
 			CorsoDAO.getFactory().create(conn, corso2);
 			System.out.println("UTENTE CREATO:" );
-			System.out.println(corso.toString());
+			//TEST GET BY ID
+			System.out.println(CorsoDAO.getFactory().getById(conn, 1).toString());
+			
 		}catch(DAOException exc) {
 			exc.printStackTrace();
 			fail();
@@ -91,19 +93,19 @@ class CorsoDAOTest {
 			fail("UPDATE UTENTE FALLITO");
 		}
 	}
-	*/
+	
 	@Test
 	void testGetById() {
 		try {
 			System.out.println("mimmo");
-			Corso corso = CorsoDAO.getFactory().getById(conn, 1);
-			System.out.println(corso.toString());
+			Corso corso1 = CorsoDAO.getFactory().getById(conn, 1);
+			System.out.println(corso1.toString());
 		}catch (DAOException e) {
 			e.printStackTrace();
 			fail("Get by username fallito");
 		}
 	}
-	
+	*/
 	@Test
 	void testGetAll() {
 		try {
