@@ -7,7 +7,7 @@
 
 <%SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 	String id = (String) session.getAttribute("cod_admin");
-if (id == null) {
+if (id != null) {
 %>
 <!DOCTYPE html>
 <html>
