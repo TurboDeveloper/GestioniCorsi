@@ -6,15 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.sql.rowset.CachedRowSet;
-import javax.sql.rowset.RowSetProvider;
-
 import adapter.AdapterDocente;
 import it.betacom.milano.businesscomponent.model.Docente;
 
-public class DocenteDAO extends AdapterDocente implements GenericDAO<Docente>, DAOConstants {
+public class DocenteDAO extends AdapterDocente implements DAOConstants {
 
-	private CachedRowSet rowSet;
+	
 
 	public static DocenteDAO getFactory() throws DAOException {
 		return new DocenteDAO();
@@ -22,30 +19,9 @@ public class DocenteDAO extends AdapterDocente implements GenericDAO<Docente>, D
 
 	private DocenteDAO() throws DAOException {
 
-		try {
-			rowSet=RowSetProvider.newFactory().createCachedRowSet();
-		}catch(SQLException sql) {
-			throw new DAOException(sql);
-		}
+		
 	}
 
-	@Override
-	public void create(Connection conn, Docente entity) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void update(Connection conn, Docente entity) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void delete(Connection conn, long id) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public Docente getById(Connection conn, long id) throws DAOException {
