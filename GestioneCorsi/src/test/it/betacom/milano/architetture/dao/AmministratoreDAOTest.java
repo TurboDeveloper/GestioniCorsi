@@ -22,6 +22,7 @@ class AmministratoreDAOTest {
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
+		a= new Amministratore();
 		conn=DBAccess.getConnection();
 		a.setCod_admin(3);
 		a.setNome_admin("nome");
@@ -37,7 +38,7 @@ class AmministratoreDAOTest {
 	}	
 
 	@Test
-	void testCreate() {//cio2
+	void testCreate() {
 		try {
 			AmministratoreDAO.getFactory().create(conn, a);
 			System.out.println("admin creato");

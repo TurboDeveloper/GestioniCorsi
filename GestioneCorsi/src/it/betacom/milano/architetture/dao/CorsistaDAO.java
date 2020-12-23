@@ -93,7 +93,7 @@ public class CorsistaDAO implements GenericDAO<Corsista>,DAOConstants {
 
 	@Override
 	public Corsista getById(Connection conn, long id) throws DAOException {
-		Corsista c=null;
+		Corsista c= new Corsista();
 		try {
 			PreparedStatement ps = conn.prepareStatement(SELECT_CORSISTA_BYPK);
 			ps.setLong(1, id);
