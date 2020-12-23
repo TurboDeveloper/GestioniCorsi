@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%
+	String id = (String) session.getAttribute("cod_admin");
+if (id == null) {
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +13,7 @@
 </head>
 <body>
 	<div class="container">
-	<jsp:include page="nav.jsp"/>
+		<jsp:include page="nav.jsp" />
 		<div class="page-header">
 			<h3>Lista dei Corsi</h3>
 		</div>
@@ -19,33 +23,41 @@
 					<tr>
 						<th style="width: 200px;">Nome Corso</th>
 						<th style="width: 200px;">Docente</th>
+						<th style="width: 200px;">Data Inizio</th>
+						<th style="width: 200px;">Data Fine</th>
 						<th style="width: 200px;"></th>
 						<th style="width: 200px;"></th>
 
 					</tr>
 				</thead>
 				<tbody>
-				<tr>
-				<td> </td>
-				<td> </td>
-				<td> <form
-								action=""
-								method="post">
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<form action="" method="post">
 
 								<button type="submit" class="btn btn-warning btn-xs">Modifica</button>
-							</form> </td>
-				<td><form
-								action=""
-								method="post">
+							</form>
+						</td>
+						<td><form action="" method="post">
 
 								<button type="submit" class="btn btn-danger btn-xs">Rimuovi</button>
-							</form> </td>
-				<td> </td>
-				 </tr>
+							</form></td>
+						<td></td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
-		<footer class="footer"><%@include file="footer.html" %></footer>
+		<footer class="footer"><%@include file="footer.html"%></footer>
 	</div>
 </body>
 </html>
+<%
+	} else {
+response.sendRedirect("accessonegato.jsp");
+
+}
+%>
