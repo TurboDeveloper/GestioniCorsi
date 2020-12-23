@@ -3,7 +3,7 @@
 <%@page import="java.util.Enumeration"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="it.betacom.milano.businnesscomponent.BC.ClientFacade" %>
+<%@ page import="it.betacom.milano.businesscomponent.BC.ClientFacade" %>
 
 <%SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 	String id = (String) session.getAttribute("cod_admin");
@@ -72,6 +72,10 @@ if (id != null) {
 	%>
 				</tbody>
 			</table>
+			<form action="/corsoform.jsp" method="post">
+
+								<button type="submit" class="btn btn-primary">Aggiungi Corso</button>
+							</form>
 		</div>
 		
 	</div>

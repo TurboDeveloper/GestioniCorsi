@@ -1,4 +1,4 @@
-package it.betacom.milano.businnesscomponent.BC;
+package it.betacom.milano.businesscomponent.BC;
 
 import java.io.IOException;
 import java.sql.Connection;

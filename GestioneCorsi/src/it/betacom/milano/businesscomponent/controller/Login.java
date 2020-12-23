@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import it.betacom.milano.architetture.dao.DAOException;
-import it.betacom.milano.businnesscomponent.BC.ClientFacade;
+import it.betacom.milano.businesscomponent.BC.ClientFacade;
 
 
 @WebServlet("/login")

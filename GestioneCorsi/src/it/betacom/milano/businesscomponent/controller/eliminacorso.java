@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import it.betacom.milano.architetture.dao.DAOException;
-import it.betacom.milano.businnesscomponent.BC.ClientFacade;
+import it.betacom.milano.businesscomponent.BC.ClientFacade;
 
 /**
  * Servlet implementation class listacorsi
