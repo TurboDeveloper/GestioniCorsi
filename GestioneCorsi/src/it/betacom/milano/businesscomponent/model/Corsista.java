@@ -42,14 +42,14 @@ public class Corsista {
 		}
 		
 	}
+
+
 	@Override
 	public String toString() {
 		return "Corsista [cod_corsista=" + cod_corsista + ", nome_corsista=" + nome_corsista + ", cognome_corsista="
-				+ cognome_corsista + ", precententi_formativi=" + precententi_formativi + ", getCod_corsista()="
-				+ getCod_corsista() + ", getNome_corsista()=" + getNome_corsista() + ", getCognome_corsista()="
-				+ getCognome_corsista() + ", isPrecententi_formativi()=" + isPrecententi_formativi() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ cognome_corsista + ", precententi_formativi=" + precententi_formativi + "]";
 	}
+	
 	
 	
 	

@@ -81,7 +81,7 @@ public class CorsistaDAO implements GenericDAO<Corsista>,DAOConstants {
 	@Override
 	public void delete(Connection conn, long id) throws DAOException {
 		try {
-			PreparedStatement ps = conn.prepareStatement(DELETE_AMMINISTRATORE);
+			PreparedStatement ps = conn.prepareStatement(DELETE_CORSISTA);
 			ps.setLong(1, id);
 			ps.execute();
 			conn.commit();

@@ -18,7 +18,8 @@ public interface DAOConstants {
 			+ "  (CASE WHEN TO_CHAR(CompleteDate,'DY','nls_date_language=english')='SAT' THEN 1 ELSE 0 END) as BusinessDays\r\n"
 			+ "FROM Orders\r\n"
 			+ "ORDER BY OrderNumber;";
-	String UPDATE_CORSISTA="update dati_corsisti set nome_corsista=?,cognome_corsista=?,precedenti_formativi=?,where cod_corsista=?";
+	String DELETE_CORSISTA="delete from dati_corsisti where cod_corsista=?";
+	String UPDATE_CORSISTA="update dati_corsisti set nome_corsista=?,cognome_corsista=?,precedenti_formativi=? where cod_corsista=?";
 	String SELECT_CORSISTA_BYPK="select * from dati_corsisti where cod_corsista=?";
 	String SELECT_CORSISTI="Select * from dati_corsisti ";
 	String SELECT_CORSIDISPONIBILI="Select * from dati_corsi where posti_disponibili>0 oder by posti_disponibili"; //(posti_totali-prenotati)as posti_disponibili>0
