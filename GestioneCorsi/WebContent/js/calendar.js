@@ -7,7 +7,7 @@ $(function () {
 					}).on(
 						'changeDate',
 						function (e) {
-							$("#userForm").bootstrapValidator(
+							$("#corsoForm").bootstrapValidator(
 								'revalidateField', 'nascita');
 						});
 				});
