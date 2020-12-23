@@ -119,6 +119,13 @@ if (id == null) {
 					</div>
 				</div>
 				</div>
+				<div class="row">
+				<div class="col-md-4 col-md-offset-1">
+					<button type="submit" class="btn btn-primary btn-lg">
+						Login&nbsp;<span class="glyphicon glyphicon-send"></span>
+					</button>
+				</div>
+			</div>
 		</form>
 
 
