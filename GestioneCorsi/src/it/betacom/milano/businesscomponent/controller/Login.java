@@ -38,7 +38,7 @@ public class Login extends HttpServlet {
 			}
 	
 		} catch (DAOException | ClassNotFoundException | IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}

@@ -6,8 +6,8 @@
 <meta charset="ISO-8859-1">
 <%@include file="CDN.html" %>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/style.css">
 <title>Error</title>
+<script src="js/convalida.js"></script>
 </head>
 <body>
 <jsp:include page="nav.jsp"/>
@@ -16,7 +16,7 @@
 		<h3>Login</h3>
 	</div>
 		<form action="/<%=application.getServletContextName() %>/login"
-			  class="form-horizontal" method="post" id="userForm">
+			  class="form-horizontal" method="post" id="loginForm">
 			  <div class="form-group">
 				<label class="col-md-1 control-label" for="cod_admin">
 					Codice Admin
@@ -28,9 +28,10 @@
 					</span>
 					<input type="text" name="cod_admin" id="cod_admin" 
 						   placeholder="Codice Amministratore..." 
-						   class="form-control" required>				
+						   class="form-control">				
 				</div>
 				</div>
+					<div class="col-md-7 control-label" id="infoCod_admin"></div>
 			</div>
 			
 			<div class="form-group">
