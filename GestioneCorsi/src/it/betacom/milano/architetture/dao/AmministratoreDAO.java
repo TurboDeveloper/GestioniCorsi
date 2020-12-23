@@ -97,7 +97,7 @@ public class AmministratoreDAO extends AdapterAmministratore implements DAOConst
 		}
 		
 		return a;
-	}
+	}//ciao
 
 	
 
