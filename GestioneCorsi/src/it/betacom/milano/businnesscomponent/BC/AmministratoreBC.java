@@ -15,9 +15,9 @@ private Connection conn;
 	public AmministratoreBC() throws DAOException, ClassNotFoundException, IOException {
 		conn = DBAccess.getConnection();
 	}
-	public Amministratore getById(long id) throws DAOException {
+	public Amministratore getByIdPass(long id,String pass) throws DAOException {
 		try {
-			return AmministratoreDAO.getFactory().getById(conn, id);
+			return AmministratoreDAO.getFactory().getByIdPass(conn, id,pass);
 		}catch (SQLException e) {
 			throw new DAOException(e);
 		}

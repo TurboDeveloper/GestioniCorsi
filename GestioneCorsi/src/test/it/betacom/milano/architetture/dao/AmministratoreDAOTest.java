@@ -44,7 +44,18 @@ class AmministratoreDAOTest {
 			System.out.println("admin creato");
 		}catch(DAOException exc) {
 			exc.printStackTrace();
-			fail("creazione articolo fallita");
+			fail("creazione admin fallita");
+		}
+	}
+	
+	@Test
+	void testByIdPass() {
+		try {
+			Amministratore ad=AmministratoreDAO.getFactory().getByIdPass(conn, 3, "pass");
+			System.out.println(ad.toString());
+		}catch(DAOException exc) {
+			exc.printStackTrace();
+			fail("delectIdPass fallita");
 		}
 	}
 

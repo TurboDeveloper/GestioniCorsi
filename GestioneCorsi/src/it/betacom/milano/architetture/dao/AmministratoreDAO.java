@@ -79,14 +79,16 @@ public class AmministratoreDAO extends AdapterAmministratore implements DAOConst
 		}
 	}
 
-	@Override
-	public Amministratore getById(Connection conn, long id) throws DAOException {
-		Amministratore a = new Amministratore();
+	
+	public Amministratore getByIdPass(Connection conn, long id,String pass) throws DAOException {
+		Amministratore a = null;
 		try {
-		PreparedStatement ps = conn.prepareStatement(SELECT_AMMINISTRATORE_BYID);
+		PreparedStatement ps = conn.prepareStatement(SELECT_AMMINISTRATORE_BYIDPASS);
 		ps.setLong(1, id);
+		ps.setString(2, pass);
 		ResultSet rs = ps.executeQuery();
 		if (rs.next()) {
+			a= new  Amministratore();
 			a.setCod_admin(rs.getLong(1));
 			a.setNome_admin(rs.getString(2));
 			a.setCognome_admin(rs.getString(3));
@@ -97,7 +99,7 @@ public class AmministratoreDAO extends AdapterAmministratore implements DAOConst
 		}
 		
 		return a;
-	}//ciao
+	}
 
 	
 

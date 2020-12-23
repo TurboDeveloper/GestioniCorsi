@@ -39,21 +39,21 @@ public class ClientFacade {
 	}
 	
 	//Amministratore
-	public Amministratore getByPK(long id) throws DAOException {
-		return amministratoreBC.getById(id);
+	public Amministratore amministratoregetByIdPass(long id,String pass) throws DAOException {
+		return amministratoreBC.getByIdPass(id,pass);
 	}
 	
 	//Corsista
 	
-	public void createCorsista(Corsista corsista) throws DAOException {
+	public void corsistaCreate(Corsista corsista) throws DAOException {
 		 corsistaBC.create(corsista);
 	}
 	
-	public void updateCorsista(Corsista corsista) throws DAOException {
+	public void corsistaUpdate(Corsista corsista) throws DAOException {
 		corsistaBC.update(corsista);
 	}
 	
-	public void deleteCorsista(long id) throws DAOException {
+	public void corsistaDelete(long id) throws DAOException {
 		corsistaBC.delete(id);
 	}
 	
@@ -67,15 +67,15 @@ public class ClientFacade {
 	
 	//Corso
 	
-	public void createCorso(Corso corso) throws DAOException {
+	public void corsoCreate(Corso corso) throws DAOException {
 		corsoBC.create(corso);
 	}
 	
-	public void updateCorso(Corso corso) throws DAOException {
+	public void corsoUpdate(Corso corso) throws DAOException {
 		corsoBC.update(corso);
 	}
 
-	public void deleteCorso(long id) throws DAOException {
+	public void corsoDelete(long id) throws DAOException {
 		corsoBC.delete(id);
 	}
 	
@@ -83,27 +83,27 @@ public class ClientFacade {
 		return corsoBC.getById(id);
 	}
 	
-	public Corso[] getCorsiAttivi() throws DAOException {
+	public Corso[] corsoGetCorsiAttivi() throws DAOException {
 		return corsoBC.getCorsiAttivi();
 	}
 	
-	public Corsista[] getCorsistiIscrittiCorso(long cod_corso) throws DAOException {
+	public Corsista[] corsoGetCorsistiIscrittiCorso(long cod_corso) throws DAOException {
 		return corsoBC.getCorsistiIscrittiAlCorso(cod_corso);		
 	}
 	
 	//CorsoCorsista
 	
-	public void createCorsoCorsista (CorsoCorsista corsoCorsista) throws DAOException {
+	public void corsoCorsistaCreate (CorsoCorsista corsoCorsista) throws DAOException {
 		corsoCorsistaBC.create(corsoCorsista);
 	}
 	
-	public long[] getCorsistiPerCorso(long id) throws DAOException {
+	public long[] corsoCorsistaGetCorsistiPerCorso(long id) throws DAOException {
 		return corsoCorsistaBC.getPerCorso(id);
 	}
 	
 	//Docente
 	
-	public Docente getDocenteById(long id) throws DAOException {
+	public Docente docenteGetDocenteById(long id) throws DAOException {
 		return docenteBC.getById(id);
 	}
 	
