@@ -9,7 +9,7 @@ import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
 import it.betacom.milano.architetture.dao.DAOException;
-import it.betacom.milano.businnesscomponent.idgenerator.CorsistaIdGenerator;
+import it.betacom.milano.businesscomponent.idgenerator.CorsistaIdGenerator;
 
 class CorsistaIdGeneratorTest {
 

@@ -1,4 +1,4 @@
-package it.betacom.milano.businnesscomponent.idgenerator;
+package it.betacom.milano.businesscomponent.idgenerator;
 
 import java.io.IOException;
 
