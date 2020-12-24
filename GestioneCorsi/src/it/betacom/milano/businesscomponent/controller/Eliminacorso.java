@@ -14,7 +14,7 @@ import it.betacom.milano.businesscomponent.BC.ClientFacade;
  * Servlet implementation class listacorsi
  */
 @WebServlet("/eliminacorso")
-public class eliminacorso extends HttpServlet {
+public class Eliminacorso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

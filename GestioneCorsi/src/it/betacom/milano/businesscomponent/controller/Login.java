@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
 		try {
 				if(ClientFacade.getInstance().amministratoregetByIdPass(codice, password)!=null) {
 				session.setAttribute("cod_admin", codice);
-				response.sendRedirect("listacorsi.jsp");
+				response.sendRedirect("listaCorsisti.jsp");
 			
 			}else if(tentativi_login>0) {				
 				tentativi_login--;				

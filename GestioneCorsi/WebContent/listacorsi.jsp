@@ -1,20 +1,20 @@
+<%
+	SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+	Long id = (Long) session.getAttribute("cod_admin");
+	if (id != null) {
+%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="it.betacom.milano.businesscomponent.model.Corso"%>
 <%@page import="java.util.Enumeration"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="it.betacom.milano.businesscomponent.BC.ClientFacade" %>
-
-<%SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-	String id = (String) session.getAttribute("cod_admin");
-if (id != null) {
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <%@include file="CDN.html"%>
-<title>Insert title here</title>
+<title>Lista corsi</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -43,9 +43,7 @@ if (id != null) {
 				<%
 					Corso corsi[]=ClientFacade.getInstance().corsoGetCorsiAttivi();
 					for(int i=0; i<corsi.length; i++ ){
-						
-					
-					%>
+				%>
 					<tr>
 						<td><%=corsi[i].getNome_corso()%></td>
 						<td><%=ClientFacade.getInstance().docenteGetDocenteById(corsi[i].getCod_docente()).getCognome_docente() %></td>
@@ -68,7 +66,8 @@ if (id != null) {
 							</form></td>
 	
 					</tr>
-										<%}
+	<%
+		}
 	%>
 				</tbody>
 			</table>
@@ -84,7 +83,6 @@ if (id != null) {
 </html>
 <%
 	} else {
-response.sendRedirect("accessonegato.jsp");
-
-}
+		response.sendRedirect("accessonegato.jsp");
+	}
 %>

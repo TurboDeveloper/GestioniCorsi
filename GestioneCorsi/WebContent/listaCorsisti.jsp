@@ -1,6 +1,6 @@
 <%
-	String id = (String) session.getAttribute("cod_admin");
-if (id != null) {
+	Long id = (Long) session.getAttribute("cod_admin");
+	if (id != null) {
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -26,12 +26,13 @@ if (id != null) {
 			Corso[] listaCorsi = ClientFacade.getInstance().corsoGetCorsiAttiviAttualmente();
 			for (Corso c : listaCorsi) {
 		%>
-		<div class="border-bottom">
-			<h5><%=c.getNome_corso()%></h5>
+	<div class="panel">
+		<div class="panel panel-header" style="text-align: center;">
+			<h4><%=c.getNome_corso()%></h4>
 		</div>
-		<div class="table-responsive">
-			<table class="table table-hover" style="width: 100%;">
-				<thead>
+		<div class="table-responsive" style="padding: 20px;">
+			<table class="table table-striped" style="width: 100%;">
+				<thead style="background-color: gray;">
 					<tr>
 						<th style="width: 200px;">Codice</th>
 						<th style="width: 200px;">Nome</th>
@@ -56,6 +57,7 @@ if (id != null) {
 				</tbody>
 			</table>
 		</div>
+	</div>
 		<%
 			}			
 		%>
