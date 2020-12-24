@@ -52,6 +52,14 @@ public class CorsoBC {
 		}
 	}
 	
+	public Corso[] getCorsiAttiviAttualmente() throws DAOException {
+		try {
+			return CorsoDAO.getFactory().getAllCorsiAttiviAttualmente(conn);
+		}catch (SQLException e) {
+			throw new DAOException(e);
+		}
+	}
+	
 	public void delete(long id) throws DAOException {
 		try {
 			CorsoDAO.getFactory().delete(conn, id);

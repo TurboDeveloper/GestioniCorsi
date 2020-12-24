@@ -41,6 +41,8 @@ String SELECT_CORSI_ATTIVI= "Select * from dati_corsi where (data_iniziocorso - 
 String SELECT_CORSO_BY_COD = "Select * from dati_corsi where cod_corso = ?";
 String SELECT_CODISCRITTI_PERCORSO = "Select cod_corsista from corso_corsista where cod_corso = ?";
 String SELECT_CORSO_CORSISTA = "Select * from corso_corsista";
+String SELECT_CORSI_ATTIVI_ATTUALMENTE = "Select * from dati_corsi where (data_finecorso - ?) > 0";
+
 }
 
 
