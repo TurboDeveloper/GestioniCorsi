@@ -72,7 +72,7 @@ if (id != null) {
 	%>
 				</tbody>
 			</table>
-			<form action="/corsoform.jsp" method="post">
+			<form action="/corsoForm.jsp" method="post">
 
 								<button type="submit" class="btn btn-primary">Aggiungi Corso</button>
 							</form>

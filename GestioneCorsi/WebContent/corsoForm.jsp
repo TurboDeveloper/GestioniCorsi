@@ -4,7 +4,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%
 	String id = (String) session.getAttribute("cod_admin");
-if (id == null) {
+if (id != null) {
 %>
 <!DOCTYPE html>
 <html>
@@ -30,7 +30,7 @@ if (id == null) {
 				<div class="col-md-4 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"> <i
-							class="glyphicon glyphicon-user"></i>
+							class="glyphicon glyphicon-info-sign"></i>
 						</span> <input type="text" name="nomecorso" id="nomecorso"
 							placeholder="Nome..." class="form-control">
 					</div>
@@ -40,33 +40,33 @@ if (id == null) {
 			<div class="form-group">
 				<label class="col-md-1 control-label">Data Inizio</label>
 				<div class="col-md-4 inputGroupContainer">
-					<div class="input-group">
-						<span class="input-group-addon"> <i
-							class="glyphicon glyphicon-user"></i>
-						</span> <input type="text" name="datainizio" id="datainizio"
-							placeholder="DD-MM-YYYY..." class="form-control">
+					<div class="input-group date" id="dp1">
+						<span class="input-group-addon">
+							<i class="glyphicon glyphicon-calendar"></i>
+						</span>
+						<input type="text" name="datainizio" id="datainizio" placeholder="DD/MM/YYYY" class="form-control">
 					</div>
 				</div>
-				<div class="col-md-7 control-label" id="infoNome"></div>
+				<div class="col-md-7 control-label" id="infoDatainizio"></div>
 			</div>
 			<div class="form-group">
 				<label class="col-md-1 control-label">Data Fine</label>
 				<div class="col-md-4 inputGroupContainer">
-					<div class="input-group">
-						<span class="input-group-addon"> <i
-							class="glyphicon glyphicon-user"></i>
-						</span> <input type="text" name="datafine" id="datafine"
-							placeholder="DD-MM-YYYY..." class="form-control">
+					<div class="input-group date" id="dp2">
+						<span class="input-group-addon">
+							<i class="glyphicon glyphicon-calendar"></i>
+						</span>
+						<input type="text" name="datafine" id="datafine" placeholder="DD/MM/YYYY" class="form-control">
 					</div>
 				</div>
-				<div class="col-md-7 control-label" id="infoNome"></div>
+				<div class="col-md-7 control-label" id="infoDatafine"></div>
 			</div>
 			<div class="form-group">
 				<label class="col-md-1 control-label">Costo Corso</label>
 				<div class="col-md-4 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"> <i
-							class="glyphicon glyphicon-user"></i>
+							class="glyphicon glyphicon-euro"></i>
 						</span> <input type="text" name="costocorso" id="costocorso"
 							placeholder="Costo..." class="form-control">
 					</div>
@@ -78,7 +78,7 @@ if (id == null) {
 				<div class="col-md-4 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"> <i
-							class="glyphicon glyphicon-user"></i>
+							class="glyphicon glyphicon-info-sign"></i>
 						</span>
 						<textarea name="commento" id="commento" class="form-control"
 							style="resize: none"> </textarea>
@@ -91,9 +91,9 @@ if (id == null) {
 				<div class="col-md-4 inputGroupContainer">
 					<div class="input-group">
 						<span class="input-group-addon"> <i
-							class="glyphicon glyphicon-user"></i>
-						</span> <input type="text" name="costocorso" id="costocorso"
-							placeholder="Costo..." class="form-control">
+							class="glyphicon glyphicon-home"></i>
+						</span> <input type="text" name="aula" id="aula"
+							placeholder="Aula..." class="form-control">
 					</div>
 				</div>
 				</div>
@@ -105,7 +105,7 @@ if (id == null) {
 					<div class="input-group">
 						<span class="input-group-addon"> <i
 							class="glyphicon glyphicon-user"></i>
-						</span>  <select
+						</span>  <select name="select"
 						class="form-control" id="sel">
 						<%
 					Docente docenti[]=ClientFacade.getInstance().docenteGetAll();
@@ -122,7 +122,7 @@ if (id == null) {
 				<div class="row">
 				<div class="col-md-4 col-md-offset-1">
 					<button type="submit" class="btn btn-primary btn-lg">
-						Login&nbsp;<span class="glyphicon glyphicon-send"></span>
+						Aggiungi&nbsp;<span class="glyphicon glyphicon-send"></span>
 					</button>
 				</div>
 			</div>
@@ -133,9 +133,8 @@ if (id == null) {
 
 
 
-
 	</div>
-
+<footer class="footer"><%@include file="footer.html" %></footer>
 </body>
 </html>
 <%

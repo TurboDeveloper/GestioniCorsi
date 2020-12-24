@@ -8,7 +8,7 @@ public class Corso {
 	private String nome_corso;
 	private Date data_iniziocorso;
 	private Date data_finecorso;
-	private int costo_corso;
+	private double costo_corso;
 	private String commenti_corso;
 	private String aula_corso;
 	private long cod_docente;
@@ -39,10 +39,10 @@ public class Corso {
 	public void setData_finecorso(Date data_finecorso) {
 		this.data_finecorso = data_finecorso;
 	}
-	public int getCosto_corso() {
+	public double getCosto_corso() {
 		return costo_corso;
 	}
-	public void setCosto_corso(int costo_corso) {
+	public void setCosto_corso(double costo_corso) {
 		this.costo_corso = costo_corso;
 	}
 	public String getCommenti_corso() {

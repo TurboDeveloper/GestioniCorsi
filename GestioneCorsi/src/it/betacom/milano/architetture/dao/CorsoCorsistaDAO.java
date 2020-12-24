@@ -8,9 +8,10 @@ import java.sql.SQLException;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 
+import adapter.AdapterCorsoCorsista;
 import it.betacom.milano.businesscomponent.model.CorsoCorsista;
 
-public class CorsoCorsistaDAO implements GenericDAO<CorsoCorsista>,DAOConstants {
+public class CorsoCorsistaDAO extends AdapterCorsoCorsista implements DAOConstants {
 	private CachedRowSet rowSet;
 	
 	public static CorsoCorsistaDAO getFactory() throws DAOException {
@@ -43,23 +44,7 @@ public class CorsoCorsistaDAO implements GenericDAO<CorsoCorsista>,DAOConstants 
 		
 	}
 
-	@Override
-	public void update(Connection conn, CorsoCorsista entity) {
-	}
-
-	@Override
-	public void delete(Connection conn, long id) {
-	}
-
-	@Override
-	public CorsoCorsista getById(Connection conn, long id) {
-		return null;
-	}
-
-	@Override
-	public CorsoCorsista[] getAll(Connection conn) {
-		return null;
-	}
+	
 	
 	public long[] getCodIscrittiPerCorso(Connection conn, long cod_corso) throws DAOException {
 		long[] cod_iscritti = null;

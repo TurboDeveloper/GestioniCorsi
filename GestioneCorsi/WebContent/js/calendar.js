@@ -1,5 +1,5 @@
 $(function () {
-					$('#dp').datepicker({
+					$('.input-group date').datepicker({
 						format: 'dd/mm/yyyy',
 						autoclose: true,
 						startDate: '01/01/1900',
@@ -8,6 +8,6 @@ $(function () {
 						'changeDate',
 						function (e) {
 							$("#corsoForm").bootstrapValidator(
-								'revalidateField', 'nascita');
+								'revalidateField', 'data');
 						});
 				});

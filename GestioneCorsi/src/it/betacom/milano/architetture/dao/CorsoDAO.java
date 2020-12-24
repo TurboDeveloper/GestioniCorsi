@@ -37,7 +37,7 @@ public class CorsoDAO implements GenericDAO<Corso>, DAOConstants{
 				rowSet.updateString(2, entity.getNome_corso());
 				rowSet.updateDate(3,new java.sql.Date(entity.getData_iniziocorso().getTime()));
 				rowSet.updateDate(4,new java.sql.Date(entity.getData_finecorso().getTime()));
-				rowSet.updateInt(5,entity.getCosto_corso());
+				rowSet.updateDouble(5,entity.getCosto_corso());
 				rowSet.updateString(6, entity.getCommenti_corso());
 				rowSet.updateString(7, entity.getAula_corso());
 				rowSet.updateLong(8, entity.getCod_docente());
