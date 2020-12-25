@@ -1,3 +1,7 @@
+<%
+	Long id = (Long) session.getAttribute("cod_admin");
+	if (id == null) {
+%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -17,3 +21,8 @@
 
 </body>
 </html>
+<%
+} else {
+	response.sendRedirect("listaCorsisti.jsp");
+}
+%>

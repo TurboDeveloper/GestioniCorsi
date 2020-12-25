@@ -71,10 +71,10 @@
 	%>
 				</tbody>
 			</table>
-			<form action="/corsoForm.jsp" method="post">
-
-								<button type="submit" class="btn btn-primary">Aggiungi Corso</button>
-							</form>
+			<div>
+				<a href="corsoform.jsp" class="btn btn-primary">Aggiungi Corso</a>
+			</div>
+			
 		</div>
 		
 	</div>

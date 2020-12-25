@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <%@include file="CDN.html"%>
 <script src="js/convalidaCorsista.js"></script>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <jsp:include page="nav.jsp" />
