@@ -9,19 +9,23 @@ import it.betacom.milano.architetture.dao.CorsoCorsistaDAO;
 import it.betacom.milano.architetture.dao.CorsoDAO;
 import it.betacom.milano.architetture.dao.DAOException;
 import it.betacom.milano.architetture.dao.DBAccess;
+import it.betacom.milano.businesscomponent.idgenerator.CorsoIdGenerator;
 import it.betacom.milano.businesscomponent.model.Corsista;
 import it.betacom.milano.businesscomponent.model.Corso;
 
 public class CorsoBC {
 	//REGOLA SONO I BUSINNES COMPONENT CHE CREA LA CONNESSIONE
 	private Connection conn;
+	private CorsoIdGenerator idGen;
 	
 	public CorsoBC() throws DAOException, ClassNotFoundException, IOException {
 		conn = DBAccess.getConnection();
 	}
 	
-	public void create(Corso c) throws DAOException {
+	public void create(Corso c) throws DAOException, ClassNotFoundException, IOException {
 		try {
+			idGen=CorsoIdGenerator.getInstace();
+			c.setCod_corso(idGen.nextId());
 			CorsoDAO.getFactory().create(conn, c);
 		}catch (SQLException e) {
 			throw new DAOException(e);

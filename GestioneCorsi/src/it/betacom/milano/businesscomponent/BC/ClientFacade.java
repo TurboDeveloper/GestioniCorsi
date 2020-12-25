@@ -69,7 +69,9 @@ public class ClientFacade {
 	
 	//Corso
 	
-	public void corsoCreate(Corso corso) throws DAOException {
+	public void corsoCreate(Corso corso) throws DAOException,
+												ClassNotFoundException,
+												IOException {
 		corsoBC.create(corso);
 	}
 	

@@ -3,8 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
-	String id = (String) session.getAttribute("cod_admin");
-if (id != null) {
+	Long id = (Long) session.getAttribute("cod_admin");
+	if (id != null) {
 %>
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@ if (id != null) {
 		<div class="page-header">
 			<h3>Aggiungi Nuovo Corso</h3>
 		</div>
-		<form action="/<%=application.getServletContextName()%>/salvacorso"
+		<form action="/<%=application.getServletContextName()%>/corsoForm"
 			class="form-horizontal" method="post" id="corsoForm">
 			<%--Nome --%>
 			<div class="form-group">

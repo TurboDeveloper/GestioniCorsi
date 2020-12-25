@@ -17,7 +17,7 @@ import it.betacom.milano.businesscomponent.model.Corso;
 /**
  * Servlet implementation class CorsoForm
  */
-@WebServlet("/CorsoForm")
+@WebServlet("/corsoForm")
 public class CorsoForm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -33,6 +33,7 @@ public class CorsoForm extends HttpServlet {
 			c.setAula_corso(request.getParameter("aula"));
 			c.setCod_docente(Integer.parseInt(request.getParameter("select")));
 			ClientFacade.getInstance().corsoCreate(c);
+			response.sendRedirect("listaCorsisti.jsp");
 		} catch (DAOException | ClassNotFoundException | IOException|ParseException e) {
 			
 			e.printStackTrace();
