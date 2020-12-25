@@ -129,6 +129,37 @@ public class CorsoDAO implements GenericDAO<Corso>, DAOConstants{
 			return corsi;
 		}
 		
+		public Corso[] getAllCorsiNonAttivi(Connection conn) throws DAOException {
+			Corso[] corsi = null;
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(SELECT_CORSI_NON_ATTIVI, 
+						ResultSet.TYPE_SCROLL_INSENSITIVE, 
+						ResultSet.CONCUR_READ_ONLY);
+				pstmt.setDate(1, new Date(new java.util.Date().getTime()));
+				ResultSet rs = pstmt.executeQuery();
+				rs.last();
+				corsi = new Corso[rs.getRow()];
+				
+				rs.beforeFirst();
+				for(int i = 0; rs.next(); i++) {
+					Corso c = new Corso();
+					c.setCod_corso(rs.getLong(1));
+					c.setNome_corso(rs.getString(2));
+					c.setData_iniziocorso(new java.util.Date(rs.getDate(3).getTime()));
+					c.setData_finecorso(new java.util.Date(rs.getDate(4).getTime()));
+					c.setCosto_corso(rs.getInt(5));
+					c.setCommenti_corso(rs.getString(6));
+					c.setAula_corso(rs.getString(7));
+					c.setCod_docente(rs.getLong(8));
+					corsi[i] = c;
+				}
+				rs.close();
+			}catch (SQLException e) {
+				throw new DAOException(e);
+			}
+			return corsi;
+		}
+		
 		public Corso[] getAllCorsiAttiviAttualmente(Connection conn) throws DAOException {
 			Corso[] corsi = null;
 			try {

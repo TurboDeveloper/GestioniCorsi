@@ -91,6 +91,10 @@ public class ClientFacade {
 		return corsoBC.getCorsiAttivi();
 	}
 	
+	public Corso[] corsoGetCorsiNonAttivi() throws DAOException {
+		return corsoBC.getCorsiNonAttivi();
+	}
+	
 	public Corso[] corsoGetCorsiAttiviAttualmente() throws DAOException {
 		return corsoBC.getCorsiAttiviAttualmente();
 	}

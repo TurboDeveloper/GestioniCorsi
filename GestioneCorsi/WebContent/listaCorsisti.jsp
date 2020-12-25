@@ -22,22 +22,31 @@
 		<div class="page-header">
 			<h3>Lista dei corsisti per ogni corso</h3>
 		</div>
+		<div class="row">
+			<a href="corsistaForm.jsp" class="btn btn-primary">Inserisci corsista</a>
+			<a href="statistiche.jsp" class="btn btn-primary">Statistiche</a>
+			<a href="listacorsi.jsp" class="btn btn-primary">Elimina corsi</a>
+		</div>
+		<hr>
 		<%
 			Corso[] listaCorsi = ClientFacade.getInstance().corsoGetCorsiAttiviAttualmente();
 			for (Corso c : listaCorsi) {
 		%>
 	<div class="panel">
-		<div class="panel panel-header" style="text-align: center;">
-			<h4><%=c.getNome_corso()%></h4>
+		<div class="panel panel-header" style="text-align:center; background-color:#596980;">
+			<h4 style="color:black;">
+				<%=c.getNome_corso()%>
+			</h4>
 		</div>
-		<div class="table-responsive" style="padding: 20px;">
-			<table class="table table-striped" style="width: 100%;">
-				<thead style="background-color: gray;">
+		<div class="table-responsive " style="padding: 20px;">
+			<table class="table table-striped table-hover" style="width: 100%;">
+				<thead style="background-color: #b3d1ff;">
 					<tr>
 						<th style="width: 200px;">Codice</th>
 						<th style="width: 200px;">Nome</th>
 						<th style="width: 200px;">Cognome</th>
 						<th style="width: 200px;">Precedenti Formativi</th>
+						
 					</tr>
 				</thead>
 				<tbody>
@@ -61,11 +70,7 @@
 		<%
 			}			
 		%>
-	<div class="row">
-		<a href="corsistaForm.jsp" class="btn btn-primary">Inserisci corsista</a>
-		<a href="statistiche.jsp" class="btn btn-primary">Statistiche</a>
-		<a href="listacorsi.jsp" class="btn btn-primary">Elimina corsi</a>
-	</div>
+	
 	</div>
 	<footer class="footer"><%@include file="footer.html"%></footer>
 </body>

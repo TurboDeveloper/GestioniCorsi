@@ -24,6 +24,7 @@
 		<div class="page-header">
 			<h3>Lista dei Corsi</h3>
 		</div>
+		<h4>Attualmente in corso</h4>
 		<div class="table-responsive">
 			<table class="table table-hover" style="width: 100%;">
 				<thead>
@@ -77,6 +78,39 @@
 			
 		</div>
 		
+		<h4>Terminati</h4>
+		<div class="table-responsive">
+			<table class="table table-hover" style="width: 100%;">
+				<thead>
+					<tr>
+						<th style="width: 200px;">Nome Corso</th>
+						<th style="width: 200px;">Docente</th>
+						<th style="width: 200px;">Aula</th>
+						<th style="width: 200px;">Data Inizio</th>
+						<th style="width: 200px;">Data Fine</th>
+					</tr>
+				</thead>
+				<tbody>
+				<%
+					Corso corsiTerminati[]=ClientFacade.getInstance().corsoGetCorsiNonAttivi();
+					
+					for(int i=0; i<corsiTerminati.length; i++ ){
+				%>
+					<tr>
+						<td><%=corsiTerminati[i].getNome_corso()%></td>
+						<td><%=ClientFacade.getInstance().docenteGetDocenteById(corsiTerminati[i].getCod_docente()).getCognome_docente() %></td>
+						<td><%=corsiTerminati[i].getAula_corso() %></td>
+						<td><%=formato.format(corsi[i].getData_iniziocorso())%></td>
+						<td><%=formato.format(corsi[i].getData_finecorso())%></td>
+						
+					</tr>
+			<%
+					}
+			%>
+				</tbody>
+			</table>
+		
+		</div>
 	</div>
 	<footer class="footer"><%@include file="footer.html"%></footer>
 </body>

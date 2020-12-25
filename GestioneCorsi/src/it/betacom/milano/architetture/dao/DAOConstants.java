@@ -8,7 +8,7 @@ public interface DAOConstants {
 	String CORSISTA_SEQUENCE="select corsista_sequence.nextval from dual";
 	String CORSI_SEQUENCE="select corsi_sequence.nextval from dual";
 	String SELECT_CORSISTASEQ = "Select corsista_sequence.nextval from dual";
-	//CORISTA
+	//CORSISTA
 	String INSERT_CORSISTA="insert into dati_corsisti values(?,?,?,?)";
 	String DELETE_CORSISTA="delete from dati_corsisti where cod_corsista=?";
 	String UPDATE_CORSISTA="update dati_corsisti set nome_corsista=?,cognome_corsista=?,precedenti_formativi=? where cod_corsista=?";
@@ -26,7 +26,8 @@ public interface DAOConstants {
 	String SELECT_DATAINIZIOULTIMOCORSO=" Select nome_corso,data_iniziocorso from dati_corsi where data_iniziocorso=(select MAX(data_iniziocorso) from dati_corsi)";
 	String SELECT_CORSIDISPONIBILI="Select * from dati_corsi where posti_disponibili>0 oder by posti_disponibili"; //(posti_totali-prenotati)as posti_disponibili>0
 	String DELETE_CORSO="Delete from dati_corsi where cod_corso=?";
-	String SELECT_CORSI_ATTIVI= "Select * from dati_corsi where (data_iniziocorso - ?) > 0 ";
+	String SELECT_CORSI_ATTIVI= "Select * from dati_corsi where ( ? - data_iniziocorso ) > 0 ";
+	String SELECT_CORSI_NON_ATTIVI= "Select * from dati_corsi where (? - data_finecorso ) > 0 ";
 	String SELECT_CORSO_BY_COD = "Select * from dati_corsi where cod_corso = ?";
 	String SELECT_CORSI_ATTIVI_ATTUALMENTE = "Select * from dati_corsi where (data_finecorso - ?) > 0";
 	//DOCENTE
