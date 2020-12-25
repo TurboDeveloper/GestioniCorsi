@@ -11,11 +11,11 @@
 <body>
 <jsp:include page="nav.jsp"/>
 	<div class="container">
-	<div class="header"><!-- titolo pagina -->
+	<div class="header" style="margin-top:100px;"><!-- titolo pagina -->
 		<h3>Login</h3>
 	</div>
 		<form action="/<%=application.getServletContextName() %>/login"
-			  class="form-horizontal" method="post" id="loginForm">
+			  class="form-horizontal" method="post" id="loginForm" style="margin-top:50px;">
 			  <div class="form-group">
 				<label class="col-md-1 control-label" for="cod_admin">
 					Codice Admin

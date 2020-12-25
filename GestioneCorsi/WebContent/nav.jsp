@@ -6,7 +6,7 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="home.jsp">Home</a>
+			<a class="navbar-brand" href="index.jsp">Home</a>
 		</div>
 		<div class="collapse navbar-collapse" id="menuApp">
 			<%

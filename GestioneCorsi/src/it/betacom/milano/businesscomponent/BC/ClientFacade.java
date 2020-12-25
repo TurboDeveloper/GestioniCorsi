@@ -45,7 +45,9 @@ public class ClientFacade {
 	
 	//Corsista
 	
-	public void corsistaCreate(Corsista corsista) throws DAOException {
+	public void corsistaCreate(Corsista corsista) throws DAOException,
+														 ClassNotFoundException,
+														 IOException {
 		 corsistaBC.create(corsista);
 	}
 	

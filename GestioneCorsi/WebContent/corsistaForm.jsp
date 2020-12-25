@@ -11,11 +11,11 @@
 <body>
 <jsp:include page="nav.jsp" />
 	<div class="container">
-		<div class="header">
+		<div class="header" style="margin-top:100px;">
 			<h3>Corsista Form</h3>
 		</div>
 		<form action="/<%=application.getServletContextName()%>/corsistaForm"
-			  class="form-horizontal" method="post" id="corsistaForm">
+			  class="form-horizontal" method="post" id="corsistaForm" style="margin-top:50px;">
 			<div class="form-group">
 				<label class="col-md-1 control-label" for="nome">
 					Nome
@@ -62,7 +62,7 @@
 			<div class="row">
 			<div class="col-md-4 col-md-offset-1">
 				<button type="submit" class="btn btn-info">
-					Registrati&nbsp;<span class="glyphicon glyphicon-send"></span>
+					Inserisci&nbsp;<span class="glyphicon glyphicon-send"></span>
 				</button>
 				
 			</div>	
