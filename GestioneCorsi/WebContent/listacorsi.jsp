@@ -24,10 +24,14 @@
 		<div class="page-header">
 			<h3>Lista dei Corsi</h3>
 		</div>
-		<h4>Attualmente in corso</h4>
+		<div class="panel panel-header" style="text-align:center; background-color:#596980;">
+			<h4 style="color:black;">
+				Attualmente in corso
+			</h4>
+		</div>
 		<div class="table-responsive">
-			<table class="table table-hover" style="width: 100%;">
-				<thead>
+			<table class="table  table-hover" style="width: 100%;">
+				<thead style="background-color: #b3d1ff;">
 					<tr>
 						<th style="width: 200px;">Nome Corso</th>
 						<th style="width: 200px;">Docente</th>
@@ -78,10 +82,15 @@
 			
 		</div>
 		
-		<h4>Terminati</h4>
+		<div class="panel panel-header" style="text-align:center; background-color:#596980;
+				margin-top:20px;">
+			<h4 style="color:black;">
+				Terminati
+			</h4>
+		</div>
 		<div class="table-responsive">
 			<table class="table table-hover" style="width: 100%;">
-				<thead>
+				<thead  style="background-color: #b3d1ff;">
 					<tr>
 						<th style="width: 200px;">Nome Corso</th>
 						<th style="width: 200px;">Docente</th>

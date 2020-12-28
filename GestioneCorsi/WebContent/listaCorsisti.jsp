@@ -22,10 +22,10 @@
 		<div class="page-header">
 			<h3>Lista dei corsisti per ogni corso</h3>
 		</div>
-		<div class="row">
-			<a href="corsistaForm.jsp" class="btn btn-primary">Inserisci corsista</a>
-			<a href="statistiche.jsp" class="btn btn-primary">Statistiche</a>
-			<a href="listacorsi.jsp" class="btn btn-primary">Elimina corsi</a>
+		<div class="btn-group btn-group-justified" >
+			<a href="corsistaForm.jsp" class="btn btn-info ">Inserisci corsista</a>
+			<a href="statistiche.jsp" class="btn btn-info">Statistiche</a>
+			<a href="listacorsi.jsp" class="btn btn-info">Elimina corsi</a>
 		</div>
 		<hr>
 		<%
@@ -39,7 +39,7 @@
 			</h4>
 		</div>
 		<div class="table-responsive " style="padding: 20px;">
-			<table class="table table-striped table-hover" style="width: 100%;">
+			<table class="table   table-hover" style="width: 100%;">
 				<thead style="background-color: #b3d1ff;">
 					<tr>
 						<th style="width: 200px;">Codice</th>
@@ -58,7 +58,11 @@
 						<td><%=corsista.getCod_corsista()%></td>
 						<td><%=corsista.getNome_corsista()%></td>
 						<td><%=corsista.getCognome_corsista()%></td>
-						<td><%=corsista.isPrecententi_formativi()%></td>
+						<%if(corsista.isPrecententi_formativi()==true){ %>
+							<td>si</td>
+						<%}else{ %>
+							<td>no</td>
+						<%} %>
 					</tr>
 				<%
 					}

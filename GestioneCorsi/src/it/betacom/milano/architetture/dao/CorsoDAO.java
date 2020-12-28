@@ -101,7 +101,7 @@ public class CorsoDAO implements GenericDAO<Corso>, DAOConstants{
 		public Corso[] getAllCorsiAttivi(Connection conn) throws DAOException {
 			Corso[] corsi = null;
 			try {
-				PreparedStatement pstmt = conn.prepareStatement(SELECT_CORSI_ATTIVI, 
+				PreparedStatement pstmt = conn.prepareStatement(SELECT_CORSI_ATTIVI_ATTUALMENTE, 
 						ResultSet.TYPE_SCROLL_INSENSITIVE, 
 						ResultSet.CONCUR_READ_ONLY);
 				pstmt.setDate(1, new Date(new java.util.Date().getTime()));

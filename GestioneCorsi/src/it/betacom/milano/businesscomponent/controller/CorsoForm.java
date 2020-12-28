@@ -33,7 +33,9 @@ public class CorsoForm extends HttpServlet {
 			c.setAula_corso(request.getParameter("aula"));
 			c.setCod_docente(Integer.parseInt(request.getParameter("select")));
 			ClientFacade.getInstance().corsoCreate(c);
+			
 			response.sendRedirect("listaCorsisti.jsp");
+			
 		} catch (DAOException | ClassNotFoundException | IOException|ParseException e) {
 			
 			e.printStackTrace();

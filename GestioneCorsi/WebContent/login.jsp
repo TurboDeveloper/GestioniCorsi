@@ -13,6 +13,9 @@
 	<div class="container">
 	<div class="header" style="margin-top:100px;"><!-- titolo pagina -->
 		<h3>Login</h3>
+		<%if((int)session.getAttribute("tentativi")<5){ %>
+			<h4>Sono rimasti <%=session.getAttribute("tentativi") %></h4>
+		<%} %>
 	</div>
 		<form action="/<%=application.getServletContextName() %>/login"
 			  class="form-horizontal" method="post" id="loginForm" style="margin-top:50px;">

@@ -27,7 +27,7 @@ public interface DAOConstants {
 	String SELECT_CORSIDISPONIBILI="Select * from dati_corsi where posti_disponibili>0 oder by posti_disponibili"; //(posti_totali-prenotati)as posti_disponibili>0
 	String DELETE_CORSO="Delete from dati_corsi where cod_corso=?";
 	String SELECT_CORSI_ATTIVI= "Select * from dati_corsi where ( ? - data_iniziocorso ) > 0 ";
-	String SELECT_CORSI_NON_ATTIVI= "Select * from dati_corsi where (? - data_finecorso ) > 0 ";
+	String SELECT_CORSI_NON_ATTIVI= "Select * from dati_corsi where (data_finecorso - ? ) < 0 ";
 	String SELECT_CORSO_BY_COD = "Select * from dati_corsi where cod_corso = ?";
 	String SELECT_CORSI_ATTIVI_ATTUALMENTE = "Select * from dati_corsi where (data_finecorso - ?) > 0";
 	//DOCENTE
