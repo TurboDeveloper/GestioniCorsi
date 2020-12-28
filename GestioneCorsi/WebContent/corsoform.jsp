@@ -14,6 +14,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/calendar.js"></script>
+<script src="js/convalidaCorso.js"></script>
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
