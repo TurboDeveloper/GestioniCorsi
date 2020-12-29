@@ -50,16 +50,15 @@
 					for(int i=0; i<corsi.length; i++ ){
 				%>
 					<tr>
+						<td><%=corsi[i].getCod_docente()%></td>
 						<td><%=corsi[i].getNome_corso()%></td>
 						<td><%=ClientFacade.getInstance().docenteGetDocenteById(corsi[i].getCod_docente()).getCognome_docente() %></td>
 						<td><%=corsi[i].getAula_corso() %></td>
 						<td><%=formato.format(corsi[i].getData_iniziocorso())%></td>
 						<td><%=formato.format(corsi[i].getData_finecorso())%></td>
 						<td>
-							<form action="/<%=application.getServletContextName()%>/modifica?id=<%=corsi[i].getCod_corso()%>" method="post">
-
-								<button type="submit" class="btn btn-warning btn-xs">Modifica</button>
-							</form>
+							<a href="modifica.jsp?id=<%=corsi[i].getCod_docente()%>"
+							   class="btn btn-warning btn-xs">Modifica</a>
 						</td>
 						<td><form action="/<%=application.getServletContextName()%>/eliminacorso?id=<%=corsi[i].getCod_corso()%>" method="post">
 
