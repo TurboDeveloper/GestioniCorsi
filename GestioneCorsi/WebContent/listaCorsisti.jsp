@@ -23,24 +23,25 @@
 			<h3>Lista dei corsisti per ogni corso</h3>
 		</div>
 		<div class="btn-group btn-group-justified" >
-			<a href="corsistaForm.jsp" class="btn btn-info ">Inserisci corsista</a>
-			<a href="statistiche.jsp" class="btn btn-info">Statistiche</a>
-			<a href="listacorsi.jsp" class="btn btn-info">Elimina corsi</a>
+			<a href="corsistaForm.jsp" class="btn btn-primary">Inserisci corsista</a>
+			<a href="statistiche.jsp" class="btn  btn-primary">Statistiche</a>
+			<a href="listacorsi.jsp" class="btn  btn-primary">Elimina corsi</a>
 		</div>
+		<hr>
 		<hr>
 		<%
 			Corso[] listaCorsi = ClientFacade.getInstance().corsoGetCorsiAttiviAttualmente();
 			for (Corso c : listaCorsi) {
 		%>
 	<div class="panel">
-		<div class="panel panel-header" style="text-align:center; background-color:#596980;">
+		<div class="panel panel-header" style="text-align:center; background-color:#418591;">
 			<h4 style="color:black;">
 				<%=c.getNome_corso()%>
 			</h4>
 		</div>
 		<div class="table-responsive " style="padding: 20px;">
 			<table class="table   table-hover" style="width: 100%;">
-				<thead style="background-color: #b3d1ff;">
+				<thead style="background-color:#b3d1ff;">
 					<tr>
 						<th style="width: 200px;">Codice</th>
 						<th style="width: 200px;">Nome</th>

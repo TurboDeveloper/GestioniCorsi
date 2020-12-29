@@ -24,7 +24,7 @@
 		<div class="page-header">
 			<h3>Lista dei Corsi</h3>
 		</div>
-		<div class="panel panel-header" style="text-align:center; background-color:#596980;">
+		<div class="panel panel-header" style="text-align:center; background-color:#418591;">
 			<h4 style="color:black;">
 				Attualmente in corso
 			</h4>
@@ -82,7 +82,7 @@
 			
 		</div>
 		
-		<div class="panel panel-header" style="text-align:center; background-color:#596980;
+		<div class="panel panel-header" style="text-align:center; background-color:#418591;
 				margin-top:20px;">
 			<h4 style="color:black;">
 				Terminati
