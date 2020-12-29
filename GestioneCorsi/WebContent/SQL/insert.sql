@@ -7,24 +7,30 @@ insert into DATI_DOCENTI values(docente_sequence.nextval, 'Giuseppe', 'Verdi', '
 insert into DATI_DOCENTI values(docente_sequence.nextval, 'Armando', 'Diaz', 'CvDiaz.txt');
 insert into DATI_DOCENTI values(docente_sequence.nextval, 'Antonio', 'Lo Cascio', 'CvLoCascio.txt');
 
-insert into DATI_CORSI values(1,'Architettura degli elaboratori',
+insert into DATI_CORSI values(corsi_sequence.nextval,'Architettura degli elaboratori',
 	TO_DATE('9/10/2020', 'dd/MM/yyyy'), TO_DATE('9/12/2021', 'dd/MM/yyyy'),
 	1800, 'Ottimo','A31',3);
 	
-insert into DATI_CORSI values(2,'Analisi 1',
+insert into DATI_CORSI values(corsi_sequence.nextval,'Analisi 1',
 	TO_DATE('2/01/2021', 'dd/MM/yyyy'), TO_DATE('9/12/2021', 'dd/MM/yyyy'),
 	2000, 'Difficile','A45',1);
 	
-insert into DATI_CORSI values(3,'Reti e sistemi operativi',
+insert into DATI_CORSI values(corsi_sequence.nextval,'Reti e sistemi operativi',
 	TO_DATE('9/9/2020', 'dd/MM/yyyy'), TO_DATE('9/12/2021', 'dd/MM/yyyy'),
 	1800, 'Utile','A31',2);
 	
-insert into DATI_CORSI values(5,'Sistemi distribuiti',
+insert into DATI_CORSI values(corsi_sequence.nextval,'Sistemi distribuiti',
 	TO_DATE('9/3/2021', 'dd/MM/yyyy'), TO_DATE('9/12/2021', 'dd/MM/yyyy'),
 	3000, 'Facile','B34',4);
 	
-insert into DATI_CORSI values(4,'Sicurezza e affidabilità',
+insert into DATI_CORSI values(corsi_sequence.nextval,'Sicurezza e affidabilità',
 	TO_DATE('9/7/2020', 'dd/MM/yyyy'), TO_DATE('9/12/2021', 'dd/MM/yyyy'),
+	4000, 'Na merda','C87',5);
+	insert into DATI_CORSI values(corsi_sequence.nextval,'Sicurezza e affidabilità',
+	TO_DATE('9/7/2020', 'dd/MM/yyyy'), TO_DATE('9/12/2020', 'dd/MM/yyyy'),
+	4000, 'Na merda','C87',5);
+	insert into DATI_CORSI values(corsi_sequence.nextval,'Sicurezza e affidabilità',
+	TO_DATE('9/7/2020', 'dd/MM/yyyy'), TO_DATE('9/10/2020', 'dd/MM/yyyy'),
 	4000, 'Na merda','C87',5);
 
 

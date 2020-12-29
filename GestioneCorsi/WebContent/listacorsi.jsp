@@ -33,6 +33,7 @@
 			<table class="table  table-hover" style="width: 100%;">
 				<thead style="background-color: #b3d1ff;">
 					<tr>
+						<th style="width: 200px;">Codice Corso</th>
 						<th style="width: 200px;">Nome Corso</th>
 						<th style="width: 200px;">Docente</th>
 						<th style="width: 200px;">Aula</th>
@@ -50,7 +51,7 @@
 					for(int i=0; i<corsi.length; i++ ){
 				%>
 					<tr>
-						<td><%=corsi[i].getCod_docente()%></td>
+						<td><%=corsi[i].getCod_corso()%></td>
 						<td><%=corsi[i].getNome_corso()%></td>
 						<td><%=ClientFacade.getInstance().docenteGetDocenteById(corsi[i].getCod_docente()).getCognome_docente() %></td>
 						<td><%=corsi[i].getAula_corso() %></td>
@@ -60,14 +61,12 @@
 							<a href="modifica.jsp?id=<%=corsi[i].getCod_docente()%>"
 							   class="btn btn-warning btn-xs">Modifica</a>
 						</td>
-						<td><form action="/<%=application.getServletContextName()%>/eliminacorso?id=<%=corsi[i].getCod_corso()%>" method="post">
+						<td><a href="/<%=application.getServletContextName()%>/eliminacorso?id=<%=corsi[i].getCod_corso()%>" class="btn btn-danger btn-xs">
 
-								<button type="submit" class="btn btn-danger btn-xs">Rimuovi</button>
-							</form></td>
-							<td><form action="/<%=application.getServletContextName()%>/iscriviCorsista?id=<%=corsi[i].getCod_corso()%>" method="post">
+								Rimuovi</a></td>
+							<td><a href="/<%=application.getServletContextName()%>/iscriviCorsista?id=<%=corsi[i].getCod_corso()%>" class="btn btn-primary btn-xs">
 
-								<button type="submit" class="btn btn-primary btn-xs">Iscrivi Corsista</button>
-							</form></td>
+								Iscrivi Corsista</a></td>
 	
 					</tr>
 	<%
@@ -91,6 +90,7 @@
 			<table class="table table-hover" style="width: 100%;">
 				<thead  style="background-color: #b3d1ff;">
 					<tr>
+						<th style="width: 200px;">Codice Corso</th>
 						<th style="width: 200px;">Nome Corso</th>
 						<th style="width: 200px;">Docente</th>
 						<th style="width: 200px;">Aula</th>
@@ -105,6 +105,7 @@
 					for(int i=0; i<corsiTerminati.length; i++ ){
 				%>
 					<tr>
+						<td><%=corsiTerminati[i].getCod_corso() %>
 						<td><%=corsiTerminati[i].getNome_corso()%></td>
 						<td><%=ClientFacade.getInstance().docenteGetDocenteById(corsiTerminati[i].getCod_docente()).getCognome_docente() %></td>
 						<td><%=corsiTerminati[i].getAula_corso() %></td>
