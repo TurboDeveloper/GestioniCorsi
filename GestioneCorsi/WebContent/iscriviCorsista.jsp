@@ -1,4 +1,3 @@
-<%@page import="it.betacom.milano.businesscomponent.model.Corso"%>
 <%@page import="it.betacom.milano.businesscomponent.BC.ClientFacade"%>
 <%@page import="it.betacom.milano.businesscomponent.model.Corsista"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -6,7 +5,6 @@
 <%
 	Long id = (Long) session.getAttribute("cod_admin");
 	if (id != null) {
-		Corso c=ClientFacade.getInstance().corsoGetById(Long.parseLong(request.getParameter("id")));
 %>
 <!DOCTYPE html>
 <html>
@@ -28,7 +26,7 @@
 		<form action="/<%=application.getServletContextName()%>/iscriviForm"
 			class="form-horizontal" method="post" id="corsoForm">
 				<div class="form-group">
-				<input type="hidden" id="corsoId" name="corsoId" value="<%= c.getCod_corso()%>">
+				<input type="hidden" id="corsoId" name="corsoId" value="<%= request.getParameter("id")%>">
 				<label class="col-md-1 control-label">Corsista</label>
 				<div class="col-md-4 inputGroupContainer">
 					<div class="input-group">
