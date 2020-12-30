@@ -23,6 +23,11 @@
 		<div class="page-header">
 			<h3>Iscrivi corsista ad un corso</h3>
 		</div>
+		<%if(session.getAttribute("messaggio")!=null){ %>
+		<div>
+			<h4><%=session.getAttribute("messaggio") %></h4>
+		</div>
+		<%} %>
 		<form action="/<%=application.getServletContextName()%>/iscriviForm"
 			class="form-horizontal" method="post" id="corsoForm">
 				<div class="form-group">

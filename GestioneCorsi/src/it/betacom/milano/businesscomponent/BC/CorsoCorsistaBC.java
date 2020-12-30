@@ -29,4 +29,11 @@ private Connection conn;
 			throw new DAOException(e);
 		}
 	}
+	public CorsoCorsista[] getCorsoCorsisti() throws DAOException {
+		try {
+			return CorsoCorsistaDAO.getFactory().getAll(conn);
+		}catch (SQLException e) {
+			throw new DAOException(e);
+		}
+	}
 }

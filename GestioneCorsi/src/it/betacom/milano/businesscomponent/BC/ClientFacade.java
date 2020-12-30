@@ -112,6 +112,9 @@ public class ClientFacade {
 	public long[] corsoCorsistaGetCorsistiPerCorso(long id) throws DAOException {
 		return corsoCorsistaBC.getPerCorso(id);
 	}
+	public CorsoCorsista[] corsocorsistGetAll() throws DAOException{
+		return corsoCorsistaBC.getCorsoCorsisti();
+	}
 	
 	//Docente
 	
