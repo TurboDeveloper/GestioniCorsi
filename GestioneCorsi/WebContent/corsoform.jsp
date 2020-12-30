@@ -11,7 +11,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <%@include file="CDN.html"%>
-<title>Insert title here</title>
+<title>Aggiungi Nuovo Corso</title>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/calendar.js"></script>
 <script src="js/convalidaCorso.js"></script>
@@ -139,5 +139,6 @@
 </body>
 </html>
 <%
-	}
+	}else {
+		response.sendRedirect("accessonegato.jsp");}
 %>

@@ -64,7 +64,7 @@
 						<td><a href="/<%=application.getServletContextName()%>/eliminacorso?id=<%=corsi[i].getCod_corso()%>" class="btn btn-danger btn-xs">
 
 								Rimuovi</a></td>
-							<td><a href="/<%=application.getServletContextName()%>/iscriviCorsista?id=<%=corsi[i].getCod_corso()%>" class="btn btn-primary btn-xs">
+							<td><a href="iscriviCorsista.jsp?id=<%=corsi[i].getCod_corso()%>" class="btn btn-primary btn-xs">
 
 								Iscrivi Corsista</a></td>
 	

@@ -8,6 +8,6 @@ $(function () {
 						'changeDate',
 						function (e) {
 							$("#corsoForm").bootstrapValidator(
-								'revalidateField', 'data');
+								'revalidateField', 'nascita');
 						});
 				});
