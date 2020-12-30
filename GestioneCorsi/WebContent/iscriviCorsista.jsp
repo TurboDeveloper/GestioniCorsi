@@ -26,7 +26,7 @@
 		<form action="/<%=application.getServletContextName()%>/iscriviForm"
 			class="form-horizontal" method="post" id="corsoForm">
 				<div class="form-group">
-				<input type="hidden" id="corsoId" name="corsoId" value="<%= request.getParameter("id")%>">
+				<input type="hidden" id="corsoId" name="corsoId" value="<%=request.getParameter("id")%>">
 				<label class="col-md-1 control-label">Corsista</label>
 				<div class="col-md-4 inputGroupContainer">
 					<div class="input-group">
