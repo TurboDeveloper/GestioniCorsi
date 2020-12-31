@@ -42,6 +42,9 @@ public class ClientFacade {
 	public Amministratore amministratoregetByIdPass(long id,String pass) throws DAOException {
 		return amministratoreBC.getByIdPass(id,pass);
 	}
+	public Amministratore amministratoreGetById(long id) throws DAOException {
+		return amministratoreBC.getById(id);
+	}
 	
 	//Corsista
 	

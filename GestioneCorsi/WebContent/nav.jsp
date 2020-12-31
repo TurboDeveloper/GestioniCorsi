@@ -1,3 +1,4 @@
+<%@page import="it.betacom.milano.businesscomponent.BC.ClientFacade"%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -12,7 +13,7 @@
 			<%
 				Long user = (Long) session.getAttribute("cod_admin");
 			if (user == null) {
-			%>
+			%>							
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="login.jsp"> <span
 						class="glyphicon glyphicon-log-in"></span>Sing-in
@@ -26,8 +27,9 @@
 				<li><a href="listaCorsisti.jsp">Lista Corsisti</a></li>
 				<li><a href="statistiche.jsp">Statistiche</a></li>
 			</ul>
-
+			
 			<ul class="nav navbar-nav navbar-right">
+				<li><a>Admin: <%=ClientFacade.getInstance().amministratoreGetById(user).getNome_admin()%> <%=ClientFacade.getInstance().amministratoreGetById(user).getCognome_admin()%></a></li>
 				<li><a href="logout.jsp"> <span
 						class="glyphicon glyphicon-off"></span>Logout
 				</a></li>
