@@ -118,6 +118,9 @@ public class ClientFacade {
 	public CorsoCorsista[] corsocorsistGetAll() throws DAOException{
 		return corsoCorsistaBC.getCorsoCorsisti();
 	}
+	public void corsoCorsistaDeleteCorsistaCorso (long cod_corso,long cod_corsista) throws DAOException {
+		corsoCorsistaBC.deleteCorsistaCorso(cod_corso, cod_corsista);
+	}
 	
 	//Docente
 	

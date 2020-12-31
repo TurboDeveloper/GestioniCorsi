@@ -39,6 +39,7 @@ public interface DAOConstants {
 	String DELETE_CORSO_CORSISTA="Delete from corso_corsista where cod_corso=?";
 	String SELECT_CODISCRITTI_PERCORSO = "Select cod_corsista from corso_corsista where cod_corso = ?";
 	String SELECT_CORSO_CORSISTA = "Select * from corso_corsista";
+	String DELETE_CORSISTA_CORSO="Delete from corso_corsista where cod_corso=? and cod_corsista=?";
 
 	/*???*/
 	String SELECT_CORSOXNMAGGCORSISTI="select cod_corso, count(cod_corsista) from corso_corsista group by cod_corso fetch 1 rows";

@@ -27,6 +27,25 @@ public class CorsoCorsistaDAO extends AdapterCorsoCorsista implements DAOConstan
 			throw new DAOException(e);
 		}
 	}
+	
+	
+	
+	
+	
+	public void deleteCorsistaCorso(Connection conn, long cod_corso,long cod_corsista) throws DAOException {
+		try {
+			PreparedStatement ps = conn.prepareStatement(DELETE_CORSISTA_CORSO);
+			ps.setLong(1, cod_corso);
+			ps.setLong(2, cod_corsista);
+			ps.execute();
+			conn.commit();
+			}catch(SQLException sql){
+				throw new DAOException(sql);			
+			}
+		
+	}
+
+
 	@Override
 	public CorsoCorsista[] getAll(Connection conn) throws DAOException {
 		

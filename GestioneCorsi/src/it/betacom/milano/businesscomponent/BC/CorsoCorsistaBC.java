@@ -36,4 +36,13 @@ private Connection conn;
 			throw new DAOException(e);
 		}
 	}
+	
+	public void deleteCorsistaCorso(long cod_corso,long cod_corsista) throws DAOException{
+		try {
+			 CorsoCorsistaDAO.getFactory().deleteCorsistaCorso(conn, cod_corso, cod_corsista);
+		}catch (SQLException e) {
+			throw new DAOException(e);
+		}
+	}
+	
 }

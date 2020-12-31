@@ -58,15 +58,17 @@
 						<td><%=formato.format(corsi[i].getData_iniziocorso())%></td>
 						<td><%=formato.format(corsi[i].getData_finecorso())%></td>
 						<td>
-							<a href="modifica.jsp?id=<%=corsi[i].getCod_docente()%>"
+							<a href="modifica.jsp?id=<%=corsi[i].getCod_corso()%>"
 							   class="btn btn-warning btn-xs">Modifica</a>
 						</td>
-						<td><a href="/<%=application.getServletContextName()%>/eliminacorso?id=<%=corsi[i].getCod_corso()%>" class="btn btn-danger btn-xs">
-
-								Rimuovi</a></td>
-							<td><a href="iscriviCorsista.jsp?id=<%=corsi[i].getCod_corso()%>" class="btn btn-primary btn-xs">
-
-								Iscrivi Corsista</a></td>
+						<td>
+							<a href="eliminacorso.jsp?id=<%=corsi[i].getCod_corso()%>" 
+								class="btn btn-danger btn-xs">Rimuovi</a>
+						</td>
+						<td>
+							<a href="iscriviCorsista.jsp?id=<%=corsi[i].getCod_corso()%>" 
+								class="btn btn-primary btn-xs">Iscrivi Corsista</a>
+						</td>
 	
 					</tr>
 	<%
@@ -109,9 +111,8 @@
 						<td><%=corsiTerminati[i].getNome_corso()%></td>
 						<td><%=ClientFacade.getInstance().docenteGetDocenteById(corsiTerminati[i].getCod_docente()).getCognome_docente() %></td>
 						<td><%=corsiTerminati[i].getAula_corso() %></td>
-						<td><%=formato.format(corsi[i].getData_iniziocorso())%></td>
-						<td><%=formato.format(corsi[i].getData_finecorso())%></td>
-						
+						<td><%=formato.format(corsiTerminati[i].getData_iniziocorso())%></td>
+						<td><%=formato.format(corsiTerminati[i].getData_finecorso())%></td>					
 					</tr>
 			<%
 					}

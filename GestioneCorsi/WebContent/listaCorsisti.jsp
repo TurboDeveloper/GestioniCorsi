@@ -47,6 +47,7 @@
 						<th style="width: 200px;">Nome</th>
 						<th style="width: 200px;">Cognome</th>
 						<th style="width: 200px;">Precedenti Formativi</th>
+						<th style="width: 200px;">Elimina Corsista</th>
 						
 					</tr>
 				</thead>
@@ -64,6 +65,10 @@
 						<%}else{ %>
 							<td>no</td>
 						<%} %>
+						<td><a href="eliminaCorsistaCorso?corso=<%=c.getCod_corso()%>&corsista=
+									<%=corsista.getCod_corsista() %>"
+							   class="btn btn-danger btn-xs">
+								Rimuovi Corsista</a></td>
 					</tr>
 				<%
 					}
