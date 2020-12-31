@@ -11,7 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import it.betacom.milano.architetture.dao.DAOException;
 import it.betacom.milano.businesscomponent.BC.ClientFacade;
-import it.betacom.milano.businesscomponent.model.Corsista;
 import it.betacom.milano.businesscomponent.model.CorsoCorsista;
 
 @WebServlet("/iscriviForm")
@@ -28,7 +27,7 @@ public class IscriviForm extends HttpServlet {
 		try {
 			CorsoCorsista savedc[] = ClientFacade.getInstance().corsocorsistGetAll();
 			for (int i = 0; i < savedc.length; i++) {
-				if (savedc[i].getCodice_corso() != id && savedc[i].getCodice_corsista() != select) {
+				if ((savedc[i].getCodice_corso() != id) || (savedc[i].getCodice_corsista() != select)) {
 					c.setCodice_corso(id);
 					c.setCodice_corsista(select);
 					
