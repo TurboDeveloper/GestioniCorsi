@@ -59,4 +59,13 @@ public class CorsistaBC {
 			throw new DAOException(e);
 		}
 	}
+	
+	public int countCorsisti() throws DAOException{
+		try {
+			return CorsistaDAO.getFactory().countCorsisti(conn);
+		}catch (SQLException e) {
+			throw new DAOException(e);
+		}
+		
+	}
 }

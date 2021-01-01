@@ -47,7 +47,7 @@
 						<th style="width: 200px;">Nome</th>
 						<th style="width: 200px;">Cognome</th>
 						<th style="width: 200px;">Precedenti Formativi</th>
-						<th style="width: 200px;">Elimina Corsista</th>
+						<th style="width: 200px;">Rimuovi Corsista</th>
 						
 					</tr>
 				</thead>

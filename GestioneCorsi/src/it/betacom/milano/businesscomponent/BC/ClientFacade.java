@@ -70,6 +70,10 @@ public class ClientFacade {
 		return corsistaBC.getCorsisti();
 	}
 	
+	public int corsistaCountCorsisti() throws DAOException{
+		return corsistaBC.countCorsisti();
+	}
+	
 	//Corso
 	
 	public void corsoCreate(Corso corso) throws DAOException,

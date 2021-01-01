@@ -32,7 +32,7 @@ public class Login extends HttpServlet {
 				session.setAttribute("cod_admin", codice);
 				response.sendRedirect("listaCorsisti.jsp");
 			
-			}else if(tentativi_login>0) {				
+			}else if(tentativi_login>1) {				
 				tentativi_login--;				
 				session.setAttribute("tentativi", tentativi_login);				
 				response.sendRedirect("login.jsp");

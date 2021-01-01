@@ -14,6 +14,7 @@ public interface DAOConstants {
 	String UPDATE_CORSISTA="update dati_corsisti set nome_corsista=?,cognome_corsista=?,precedenti_formativi=? where cod_corsista=?";
 	String SELECT_CORSISTA_BYPK="select * from dati_corsisti where cod_corsista=?";
 	String SELECT_CORSISTI="Select * from dati_corsisti ";
+	String COUNT_CORSISTI="select count(*) from dati_corsisti";
 	//AMMINISTRATORE
 	String SELECT_AMMINISTRATORE="Select * from amministratore";
 	String UPDATE_AMMINISTRATORE="Update amministratore set nome_admin=? cognome_admin=? password_admin where cod_amin=? ";
