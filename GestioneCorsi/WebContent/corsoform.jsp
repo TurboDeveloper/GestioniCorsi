@@ -62,6 +62,7 @@
 				</div>
 				<div class="col-md-7 control-label" id="infoDatafine"></div>
 			</div>
+		
 			<div class="form-group">
 				<label class="col-md-1 control-label">Costo Corso</label>
 				<div class="col-md-4 inputGroupContainer">
