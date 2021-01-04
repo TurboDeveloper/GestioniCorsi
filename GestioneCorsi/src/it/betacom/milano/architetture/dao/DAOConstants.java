@@ -24,7 +24,8 @@ public interface DAOConstants {
 	//CORSI
 	String SELECT_CORSI="Select * from dati_corsi ";
 	String SELECT_COUNTCOMMENTI="Select count(commenti_corso) from dati_corsi";
-	String SELECT_DATAINIZIOULTIMOCORSO=" Select nome_corso,data_iniziocorso from dati_corsi where data_iniziocorso=(select MAX(data_iniziocorso) from dati_corsi)";
+	String SELECT_DATAINIZIOULTIMOCORSO=" select * from dati_corsi where cod_corso=(select max(cod_corso) from dati_corsi)";
+										//Select nome_corso,data_iniziocorso from dati_corsi where data_iniziocorso=(select MAX(data_iniziocorso) from dati_corsi)
 	String SELECT_CORSIDISPONIBILI="Select * from dati_corsi where posti_disponibili>0 oder by posti_disponibili"; //(posti_totali-prenotati)as posti_disponibili>0
 	String DELETE_CORSO="Delete from dati_corsi where cod_corso=?";
 	String SELECT_CORSI_ATTIVI= "Select * from dati_corsi where ( ? - data_iniziocorso ) > 0 ";
@@ -41,6 +42,8 @@ public interface DAOConstants {
 	String SELECT_CODISCRITTI_PERCORSO = "Select cod_corsista from corso_corsista where cod_corso = ?";
 	String SELECT_CORSO_CORSISTA = "Select * from corso_corsista";
 	String DELETE_CORSISTA_CORSO="Delete from corso_corsista where cod_corso=? and cod_corsista=?";
+	
+	String CORSO_PER_CORSISTA="select * from dati_corsi where cod_corso in(select cod_corso from corso_corsista where cod_corsista=?)";
 
 	/*???*/
 	String SELECT_CORSOXNMAGGCORSISTI="select cod_corso, count(cod_corsista) from corso_corsista group by cod_corso fetch 1 rows";

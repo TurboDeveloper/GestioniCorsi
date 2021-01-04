@@ -190,4 +190,59 @@ public class CorsoDAO implements GenericDAO<Corso>, DAOConstants{
 			}
 			return corsi;
 		}
+		
+		public Corso[] getCorsoPerCorsista(Connection conn,long cod_corsista) throws DAOException {
+			Corso[] corsi = null;
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(CORSO_PER_CORSISTA, 
+						ResultSet.TYPE_SCROLL_INSENSITIVE, 
+						ResultSet.CONCUR_READ_ONLY);
+				pstmt.setLong(1, cod_corsista);
+				ResultSet rs = pstmt.executeQuery();
+				rs.last();
+				corsi = new Corso[rs.getRow()];
+				
+				rs.beforeFirst();
+				for(int i = 0; rs.next(); i++) {
+					Corso c = new Corso();
+					c.setCod_corso(rs.getLong(1));
+					c.setNome_corso(rs.getString(2));
+					c.setData_iniziocorso(new java.util.Date(rs.getDate(3).getTime()));
+					c.setData_finecorso(new java.util.Date(rs.getDate(4).getTime()));
+					c.setCosto_corso(rs.getInt(5));
+					c.setCommenti_corso(rs.getString(6));
+					c.setAula_corso(rs.getString(7));
+					c.setCod_docente(rs.getLong(8));
+					corsi[i] = c;
+				}
+				rs.close();
+			}catch (SQLException e) {
+				throw new DAOException(e);
+			}
+			return corsi;
+		}
+		
+		public Corso getDataUltimoCorso(Connection conn) throws DAOException {
+			Corso c = null;
+			PreparedStatement ps;
+			try {
+				ps = conn.prepareStatement(SELECT_DATAINIZIOULTIMOCORSO);
+				ResultSet rs = ps.executeQuery();
+				if(rs.next()) {
+					c = new Corso();
+					c.setCod_corso(rs.getLong(1));
+					c.setNome_corso(rs.getString(2));
+					c.setData_iniziocorso(new java.util.Date(rs.getDate(3).getTime()));
+					c.setData_finecorso(new java.util.Date(rs.getDate(4).getTime()));
+					c.setCosto_corso(rs.getInt(5));
+					c.setCommenti_corso(rs.getString(6));
+					c.setAula_corso(rs.getString(7));
+					c.setCod_docente(rs.getLong(8));
+				}
+			}catch (SQLException e) {
+				throw new DAOException(e);
+			}
+			return c;
+		}
+		
 }

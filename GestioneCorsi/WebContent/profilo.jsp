@@ -29,7 +29,7 @@
 			</h3>
 		</div>
 		<div class="col-md-6">
-			<strong>Information</strong><br>
+			
 			<div class="table-responsive">
 				<table class="table table-user-information">
 					<tbody>
@@ -75,7 +75,24 @@
 									 no
 								<%} %>
 							</td>						
-						</tr>						
+						</tr>
+						<tr>
+							<td>
+								<strong>
+									 <span class="glyphicon glyphicon-book text-primary"></span>
+											Corsi a cui &egrave; iscritto
+								</strong>
+							</td>
+							<td>
+								<%
+									Corso[] c= ClientFacade.getInstance().corsoGetCorsoPerCorsista(corsista.getCod_corsista());
+									for(Corso corso:c){
+								%>
+								<%=corso.getNome_corso() %><br>
+								<%} %>
+							</td>						
+						</tr>
+												
 					</tbody>
 				</table>
 			</div>

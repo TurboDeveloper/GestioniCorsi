@@ -76,6 +76,10 @@ public class ClientFacade {
 	
 	//Corso
 	
+	public Corso[] corsoGetCorsoPerCorsista(long cod_corsista) throws DAOException {
+		return corsoBC.getCorsoPerCorsista(cod_corsista);
+	}
+	
 	public void corsoCreate(Corso corso) throws DAOException,
 												ClassNotFoundException,
 												IOException {
@@ -92,6 +96,10 @@ public class ClientFacade {
 	
 	public Corso corsoGetById(long id) throws DAOException {
 		return corsoBC.getById(id);
+	}
+	
+	public Corso corsoGetDataUltimoCorso() throws DAOException {
+		return corsoBC.getDataUltimoCorso();
 	}
 	
 	public Corso[] corsoGetCorsiAttivi() throws DAOException {

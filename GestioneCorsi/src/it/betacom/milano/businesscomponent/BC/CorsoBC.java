@@ -48,6 +48,14 @@ public class CorsoBC {
 		}
 	}
 	
+	public Corso getDataUltimoCorso() throws DAOException {
+		try {
+			return CorsoDAO.getFactory().getDataUltimoCorso(conn);
+		}catch (SQLException e) {
+			throw new DAOException(e);
+		}
+	}
+	
 	public Corso[] getCorsiAttivi() throws DAOException {
 		try {
 			return CorsoDAO.getFactory().getAllCorsiAttivi(conn);
@@ -93,6 +101,15 @@ public class CorsoBC {
 			throw new DAOException(e);
 		}
 		return corsisti_iscritti;
+	}
+	
+	public Corso[] getCorsoPerCorsista(long cod_corsista) throws DAOException {
+		Corso[] corsi = null;
+		try {
+			return corsi = CorsoDAO.getFactory().getCorsoPerCorsista(conn, cod_corsista);
+		}catch (SQLException e) {
+			throw new DAOException(e);
+		}
 	}
 }
 
