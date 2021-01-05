@@ -29,7 +29,7 @@
 			</ul>
 			
 			<ul class="nav navbar-nav navbar-right">
-				<li><a> <span
+				<li><a href="profiloamministratore.jsp?id=<%=ClientFacade.getInstance().amministratoreGetById(user).getCod_admin() %>"> <span
 						class="glyphicon glyphicon-user"></span> <%=ClientFacade.getInstance().amministratoreGetById(user).getNome_admin()%> <%=ClientFacade.getInstance().amministratoreGetById(user).getCognome_admin()%></a></li>
 				<li><a href="logout.jsp"> <span
 						class="glyphicon glyphicon-off"></span>Logout

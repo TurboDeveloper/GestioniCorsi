@@ -53,7 +53,7 @@
 					<tr>
 						<td><%=corsi[i].getCod_corso()%></td>
 						<td><%=corsi[i].getNome_corso()%></td>
-						<td><%=ClientFacade.getInstance().docenteGetDocenteById(corsi[i].getCod_docente()).getCognome_docente() %></td>
+						<td><a href="profilodocente.jsp?id=<%=corsi[i].getCod_docente() %>"><%=ClientFacade.getInstance().docenteGetDocenteById(corsi[i].getCod_docente()).getCognome_docente() %></a></td>
 						<td><%=corsi[i].getAula_corso() %></td>
 						<td><%=formato.format(corsi[i].getData_iniziocorso())%></td>
 						<td><%=formato.format(corsi[i].getData_finecorso())%></td>

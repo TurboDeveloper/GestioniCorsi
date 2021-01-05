@@ -1,20 +1,19 @@
 <%
 	Long id = (Long) session.getAttribute("cod_admin");
 	if (id != null) {
-		Corsista corsista= ClientFacade.getInstance().corsistaGetById(Long.parseLong(request.getParameter("id")));
+		Docente docente= ClientFacade.getInstance().docenteGetDocenteById(Long.parseLong( request.getParameter("id")));
 			
 %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="it.betacom.milano.businesscomponent.BC.ClientFacade"%>
-<%@page import="it.betacom.milano.businesscomponent.model.Corso"%>
-<%@page import="it.betacom.milano.businesscomponent.model.Corsista"%>
+<%@page import="it.betacom.milano.businesscomponent.model.Docente"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <%@include file="CDN.html"%>
-<title>Profilo Corsista <%=corsista.getNome_corsista() %></title>
+<title>Profilo Docente <%=docente.getNome_docente() %></title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,7 +23,7 @@
 		<div class="page-header">
 			<h3>
 				Profilo di
-				<%=corsista.getNome_corsista() %>
+				<%=docente.getNome_docente() %>
 			</h3>
 		</div>
 		<div class="col-md-6">
@@ -39,7 +38,7 @@
 									Codice
 								</strong>
 							</td>
-							<td><%=corsista.getCod_corsista() %></td>
+							<td><%=docente.getCod_docente() %></td>
 						</tr>
 						<tr>
 							<td>
@@ -48,7 +47,7 @@
 									 	Nome
 								</strong>
 							</td>
-							<td ><%=corsista.getNome_corsista() %></td>
+							<td ><%=docente.getNome_docente() %></td>
 						</tr>
 						<tr>
 							<td>
@@ -57,40 +56,21 @@
 										Cognome
 								</strong>
 							</td>
-							<td><%=corsista.getCognome_corsista() %>
+							<td><%=docente.getCognome_docente() %>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<strong>
 									 <span class="glyphicon glyphicon-education text-primary"></span>
-											 Precedenti formativi
+											Curriculum
 								</strong>
 							</td>
 							<td>
-								<%if(corsista.isPrecententi_formativi()==true){ %>
-									 si
-								<%}else{ %>
-									 no
-								<%} %>
+								<a href="/doc/<%=docente.getCv_docente()%>"><%=docente.getCv_docente()%> </a>
 							</td>						
 						</tr>
-						<tr>
-							<td>
-								<strong>
-									 <span class="glyphicon glyphicon-book text-primary"></span>
-											Corsi a cui &egrave; iscritto
-								</strong>
-							</td>
-							<td>
-								<%
-									Corso[] c= ClientFacade.getInstance().corsoGetCorsoPerCorsista(corsista.getCod_corsista());
-									for(Corso corso:c){
-								%>
-								<%=corso.getNome_corso() %><br>
-								<%} %>
-							</td>						
-						</tr>
+					
 												
 					</tbody>
 				</table>
