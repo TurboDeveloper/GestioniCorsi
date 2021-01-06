@@ -25,6 +25,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="listacorsi.jsp">Lista Corsi</a></li>
 				<li><a href="listaCorsisti.jsp">Lista Corsisti</a></li>
+				<li><a href="listadocenti.jsp">Lista Docenti</a></li>
 				<li><a href="statistiche.jsp">Statistiche</a></li>
 			</ul>
 			
