@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Vector;
 
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
@@ -111,8 +110,8 @@ public class CorsoCorsistaDAO extends AdapterCorsoCorsista implements DAOConstan
 		try {
 			PreparedStatement ps = conn.prepareStatement(SELECT_CORSOPERNMAGGCORSISTI);
 			ResultSet rs= ps.executeQuery();
-			c[0]=(rs.getLong(1));
-			c[1]=(rs.getLong("n_iscritti"));
+			c[0]=rs.getLong(1);
+			c[1]=rs.getLong("n_iscritti");
 			rs.close();
 		} catch (SQLException e) {
 			throw new DAOException(e);
