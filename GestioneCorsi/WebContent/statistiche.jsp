@@ -32,6 +32,7 @@
 			</div>
 			<div class="col-sm-6">
 				<h3>Nome del corso più frequentato</h3>
+				<%=ClientFacade.getInstance().corsoGetById(ClientFacade.getInstance().getMaxCorsisti()[0]).getNome_corso() %>
 			</div>
 			<div class="col-sm-6">
 				<h3>Data di inizio ultimo corso</h3>

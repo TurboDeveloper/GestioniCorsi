@@ -1,6 +1,7 @@
 package it.betacom.milano.businesscomponent.BC;
 
 import java.io.IOException;
+import java.util.Vector;
 
 import it.betacom.milano.architetture.dao.DAOException;
 import it.betacom.milano.businesscomponent.model.Amministratore;
@@ -132,6 +133,10 @@ public class ClientFacade {
 	}
 	public void corsoCorsistaDeleteCorsistaCorso (long cod_corso,long cod_corsista) throws DAOException {
 		corsoCorsistaBC.deleteCorsistaCorso(cod_corso, cod_corsista);
+	}
+	
+	public Long[] getMaxCorsisti() throws DAOException{
+		return corsoCorsistaBC.getMaxCorsisti();
 	}
 	
 	//Docente
