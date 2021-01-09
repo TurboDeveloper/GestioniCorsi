@@ -108,10 +108,13 @@ public class CorsoCorsistaDAO extends AdapterCorsoCorsista implements DAOConstan
 	public Long[] getCorsoMaggioriCorsisti(Connection conn) throws DAOException {
 		Long c[]= new Long[2];
 		try {
-			PreparedStatement ps = conn.prepareStatement(SELECT_CORSOPERNMAGGCORSISTI);
+			PreparedStatement ps = conn.prepareStatement(SELECT_CORSOPERNMAGGCORSISTI,ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs= ps.executeQuery();
-			c[0]=rs.getLong(1);
-			c[1]=rs.getLong("n_iscritti");
+			rs.beforeFirst();
+			for (int i = 0; rs.next(); i++) {
+				c[i] = rs.getLong(1);
+			}
 			rs.close();
 		} catch (SQLException e) {
 			throw new DAOException(e);

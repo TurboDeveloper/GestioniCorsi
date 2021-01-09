@@ -45,7 +45,8 @@ public interface DAOConstants {
 	
 	String CORSO_PER_CORSISTA="select * from dati_corsi where cod_corso in(select cod_corso from corso_corsista where cod_corsista=?)";
 
-	String SELECT_CORSOPERNMAGGCORSISTI="select cod_corso, count(cod_corsista) as n_iscritti from corso_corsista group by cod_corso fetch first row only";
+	String SELECT_CORSOPERNMAGGCORSISTI="select cod_corso from corso_corsista group by cod_corso having count(cod_corsista)=(\r\n"
+										+ "select max(count(cod_corsista)) as n_iscritti from corso_corsista group by cod_corso)";
 	//???
 	String SELECT_AVGDURATACORSI="select nome_corso, data_finecorso, data_iniziocorso SELECT OrderNumber, InstallDate, CompleteDate,\r\n"
 			+ "  (TRUNC(data_finecorso) - TRUNC(data_iniziocorso) ) +1 - \r\n"
