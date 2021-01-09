@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%
 	Long id = (Long) session.getAttribute("cod_admin");
 	if (id != null) {
@@ -33,7 +34,7 @@
 			<div class="col-sm-6">
 				<h3>Nome del corso più frequentato</h3>
 				<%
-					Long[] co=ClientFacade.getInstance().getMaxCorsisti(); 
+					ArrayList<Long> co=ClientFacade.getInstance().getMaxCorsisti(); 
 					for(Long cod:co){
 				%>
 				<%=

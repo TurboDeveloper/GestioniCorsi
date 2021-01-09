@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
@@ -105,15 +106,16 @@ public class CorsoCorsistaDAO extends AdapterCorsoCorsista implements DAOConstan
 		return cod_iscritti;
 	}
 
-	public Long[] getCorsoMaggioriCorsisti(Connection conn) throws DAOException {
-		Long c[]= new Long[2];
+	public ArrayList<Long> getCorsoMaggioriCorsisti(Connection conn) throws DAOException {
+		ArrayList<Long> c= new ArrayList<Long>();
 		try {
 			PreparedStatement ps = conn.prepareStatement(SELECT_CORSOPERNMAGGCORSISTI,ResultSet.TYPE_SCROLL_INSENSITIVE,
 					ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs= ps.executeQuery();
 			rs.beforeFirst();
+			
 			for (int i = 0; rs.next(); i++) {
-				c[i] = rs.getLong(1);
+				c.add(i, rs.getLong(1));
 			}
 			rs.close();
 		} catch (SQLException e) {

@@ -3,6 +3,7 @@ package it.betacom.milano.businesscomponent.BC;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import it.betacom.milano.architetture.dao.CorsoCorsistaDAO;
@@ -49,7 +50,7 @@ public class CorsoCorsistaBC {
 		}
 	}
 
-	public Long[] getMaxCorsisti() throws DAOException {
+	public ArrayList<Long> getMaxCorsisti() throws DAOException {
 
 		try {
 			return CorsoCorsistaDAO.getFactory().getCorsoMaggioriCorsisti(conn);
